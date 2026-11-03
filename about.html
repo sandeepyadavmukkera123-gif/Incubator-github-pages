@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Us | CIP Innovation & Incubation Hub</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<header class="site-header">
+
+    <div class="container nav-wrap">
+
+        <a href="index.html" class="brand">
+
+            <span class="brand-mark">CIP</span>
+
+            <span class="brand-sub">
+                INNOVATION & INCUBATION HUB
+            </span>
+
+        </a>
+
+
+        <button class="menu-toggle" id="menuToggle">
+            ☰
+        </button>
+
+
+        <nav class="main-nav" id="mainNav">
+
+            <a href="index.html">Home</a>
+
+            <a href="about.html" class="active">About Us</a>
+
+            <a href="index.html#student-entrepreneurship">
+                Student Entrepreneurship
+            </a>
+
+            <a href="index.html#our-help">
+                Our Help
+            </a>
+
+            <a href="index.html#your-idea">
+                Your Idea
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<main>
+
+
+<!-- ABOUT HERO -->
+
+<section class="about-hero">
+
+    <div class="container">
+
+        <span class="eyebrow eyebrow-light">
+            GET TO KNOW US
+        </span>
+
+        <h1>About Us</h1>
+
+        <p>
+            We believe students have the potential to become
+            creators, innovators and entrepreneurs.
+            Our goal is to help students explore their ideas,
+            develop practical projects and discover opportunities
+            while studying in Canada.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ABOUT CONTENT -->
+
+<section class="about-content">
+
+    <div class="container">
+
+
+        <div class="about-intro">
+
+            <span class="eyebrow">
+                OUR PURPOSE
+            </span>
+
+            <h2>Encouraging Student Innovation</h2>
+
+            <p>
+                The CIP Innovation & Incubation Hub aims to provide
+                a supportive environment where students can explore
+                entrepreneurial ideas, collaborate on projects,
+                learn from industry experience and take their
+                concepts towards practical solutions.
+            </p>
+
+        </div>
+
+
+
+        <!-- TEAM -->
+
+        <div class="section-heading">
+
+            <span class="eyebrow">
+                THE PEOPLE BEHIND THE HUB
+            </span>
+
+            <h2>Meet Our Team</h2>
+
+            <p>
+                Meet the people who help encourage ideas,
+                collaboration and innovation.
+            </p>
+
+        </div>
+
+
+
+        <div class="team-container">
+
+
+            <!-- PROFILE 1 -->
+
+            <article class="team-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=85"
+                    alt="Placeholder team member profile"
+                >
+
+                <h3>Team Member 1</h3>
+
+                <div class="designation">
+                    Program Director
+                </div>
+
+                <p>
+                    Placeholder biography.
+                    Replace this description with the approved
+                    profile and professional background.
+                </p>
+
+            </article>
+
+
+
+            <!-- PROFILE 2 -->
+
+            <article class="team-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=85"
+                    alt="Placeholder team member profile"
+                >
+
+                <h3>Team Member 2</h3>
+
+                <div class="designation">
+                    Startup Mentor
+                </div>
+
+                <p>
+                    Placeholder biography.
+                    Replace this description with the approved
+                    profile and professional background.
+                </p>
+
+            </article>
+
+
+
+            <!-- PROFILE 3 -->
+
+            <article class="team-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=85"
+                    alt="Placeholder team member profile"
+                >
+
+                <h3>Team Member 3</h3>
+
+                <div class="designation">
+                    Innovation Coordinator
+                </div>
+
+                <p>
+                    Placeholder biography.
+                    Replace this description with the approved
+                    profile and professional background.
+                </p>
+
+            </article>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- FOOTER -->
+
+<footer class="site-footer">
+
+    <div class="container footer-main">
+
+        <div>
+
+            <a href="index.html" class="brand brand-footer">
+
+                <span class="brand-mark">CIP</span>
+
+                <span class="brand-sub">
+                    INNOVATION & INCUBATION HUB
+                </span>
+
+            </a>
+
+            <p>
+                Encouraging student innovation,
+                entrepreneurship and practical
+                project development while studying in Canada.
+            </p>
+
+        </div>
+
+
+        <div class="footer-nav">
+
+            <strong>Quick Links</strong>
+
+            <a href="index.html">Home</a>
+
+            <a href="about.html">About Us</a>
+
+            <a href="index.html#our-help">Our Help</a>
+
+            <a href="index.html#your-idea">Your Idea</a>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="container footer-bottom">
+
+        © 2026 CIP Innovation & Incubation Hub.
+        All rights reserved.
+
+    </div>
+
+</footer>
+
+
+
+<!-- MOBILE MENU JAVASCRIPT -->
+
+<script>
+
+    const menuToggle = document.getElementById("menuToggle");
+
+    const mainNav = document.getElementById("mainNav");
+
+
+    menuToggle.addEventListener("click", function () {
+
+        mainNav.classList.toggle("open");
+
+    });
+
+
+    document.querySelectorAll(".main-nav a").forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            mainNav.classList.remove("open");
+
+        });
+
+    });
+
+</script>
+
+
+</body>
+
+</html>

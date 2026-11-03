@@ -1,319 +1,394 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>About Us | CIP Innovation & Incubation Hub</title>
 
     <link rel="stylesheet" href="styles.css">
 
-</head>
+    <style>
+        /* ABOUT PAGE */
 
+        .about-hero {
+            background: #202c45;
+            color: white;
+            padding: 70px 8%;
+            text-align: center;
+        }
+
+        .about-label {
+            display: inline-block;
+            background: #c9232b;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .about-hero h1 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .about-hero p {
+            max-width: 750px;
+            margin: auto;
+            line-height: 1.8;
+            color: #e1e6ef;
+        }
+
+        .founder-section {
+            background: #202c45;
+            color: white;
+            padding: 50px 8%;
+        }
+
+        .profile-container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .profile-card {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 35px;
+            align-items: start;
+            background: #293650;
+            padding: 35px;
+            border-radius: 18px;
+            margin-bottom: 45px;
+            border: 1px solid rgba(255,255,255,0.12);
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 15px;
+            background: #dce1e8;
+        }
+
+        .profile-content h2 {
+            font-size: 28px;
+            margin: 8px 0 10px;
+        }
+
+        .profile-role {
+            color: #ff7777;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .profile-content p {
+            color: #e0e5ed;
+            line-height: 1.8;
+            margin-bottom: 18px;
+        }
+
+        .quote-box {
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            font-style: italic;
+            line-height: 1.8;
+            color: #e9edf5;
+        }
+
+        .quote-author {
+            color: #ff7777;
+            font-weight: 700;
+            text-align: right;
+            margin-top: 15px;
+        }
+
+        .credentials {
+            margin-top: 30px;
+        }
+
+        .credentials h3 {
+            font-size: 23px;
+            margin-bottom: 20px;
+        }
+
+        .credentials ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .credentials li {
+            padding: 12px 0;
+            color: #e4e8f0;
+            line-height: 1.6;
+        }
+
+        .credentials li::before {
+            content: "✓";
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 23px;
+            height: 23px;
+            border: 2px solid #d52d35;
+            border-radius: 50%;
+            color: #ff7777;
+            font-weight: bold;
+            margin-right: 12px;
+        }
+
+        .linkedin-button {
+            display: inline-block;
+            background: #0a66c2;
+            color: white;
+            text-decoration: none;
+            padding: 13px 24px;
+            border-radius: 8px;
+            font-weight: 700;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+
+        .linkedin-button:hover {
+            background: #084b91;
+            transform: translateY(-2px);
+        }
+
+        .about-footer {
+            background: #172238;
+            color: white;
+            padding: 30px 8%;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .about-hero {
+                padding: 50px 6%;
+            }
+
+            .about-hero h1 {
+                font-size: 29px;
+            }
+
+            .founder-section {
+                padding: 35px 5%;
+            }
+
+            .profile-card {
+                grid-template-columns: 1fr;
+                padding: 22px;
+                gap: 20px;
+            }
+
+            .profile-image {
+                height: 260px;
+                max-width: 320px;
+                margin: auto;
+            }
+
+            .profile-content h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
 
 <body>
 
+    <!-- NAVIGATION -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">CIP Innovation Hub</a>
+            </div>
 
-<!-- NAVIGATION -->
+            <button class="menu-toggle" id="menuToggle"
+                    aria-label="Open navigation menu">
+                ☰
+            </button>
 
-<header class="site-header">
-
-    <div class="container nav-wrap">
-
-        <a href="index.html" class="brand">
-
-            <span class="brand-mark">CIP</span>
-
-            <span class="brand-sub">
-                INNOVATION & INCUBATION HUB
-            </span>
-
-        </a>
-
-
-        <button class="menu-toggle" id="menuToggle">
-            ☰
-        </button>
-
-
-        <nav class="main-nav" id="mainNav">
-
-            <a href="index.html">Home</a>
-
-            <a href="about.html" class="active">About Us</a>
-
-            <a href="index.html#student-entrepreneurship">
-                Student Entrepreneurship
-            </a>
-
-            <a href="index.html#our-help">
-                Our Help
-            </a>
-
-            <a href="index.html#your-idea">
-                Your Idea
-            </a>
-
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a href="index.html#student-entrepreneurship">
+                    Student Entrepreneurship</a></li>
+                <li><a href="index.html#our-help">Our Help</a></li>
+                <li><a href="index.html#your-idea">Your Idea</a></li>
+            </ul>
         </nav>
-
-    </div>
-
-</header>
+    </header>
 
 
+    <!-- ABOUT HERO -->
+    <section class="about-hero">
 
-<main>
+        <span class="about-label">ABOUT CIP INNOVATION HUB</span>
 
-
-<!-- ABOUT HERO -->
-
-<section class="about-hero">
-
-    <div class="container">
-
-        <span class="eyebrow eyebrow-light">
-            GET TO KNOW US
-        </span>
-
-        <h1>About Us</h1>
+        <h1>Meet the People Behind Our Vision</h1>
 
         <p>
-            We believe students have the potential to become
-            creators, innovators and entrepreneurs.
-            Our goal is to help students explore their ideas,
-            develop practical projects and discover opportunities
-            while studying in Canada.
+            We believe students have the creativity and potential to build
+            meaningful solutions. Our goal is to encourage student innovation,
+            support entrepreneurship, and help turn ideas into opportunities.
         </p>
 
-    </div>
-
-</section>
+    </section>
 
 
+    <!-- FOUNDER AND TEAM PROFILES -->
+    <section class="founder-section">
 
-<!-- ABOUT CONTENT -->
+        <div class="profile-container">
 
-<section class="about-content">
+            <!-- PERSON 1: DR. GAUTHAM KOLLURI -->
 
-    <div class="container">
+            <div class="profile-card">
 
-
-        <div class="about-intro">
-
-            <span class="eyebrow">
-                OUR PURPOSE
-            </span>
-
-            <h2>Encouraging Student Innovation</h2>
-
-            <p>
-                The CIP Innovation & Incubation Hub aims to provide
-                a supportive environment where students can explore
-                entrepreneurial ideas, collaborate on projects,
-                learn from industry experience and take their
-                concepts towards practical solutions.
-            </p>
-
-        </div>
-
-
-
-        <!-- TEAM -->
-
-        <div class="section-heading">
-
-            <span class="eyebrow">
-                THE PEOPLE BEHIND THE HUB
-            </span>
-
-            <h2>Meet Our Team</h2>
-
-            <p>
-                Meet the people who help encourage ideas,
-                collaboration and innovation.
-            </p>
-
-        </div>
-
-
-
-        <div class="team-container">
-
-
-            <!-- PROFILE 1 -->
-
-            <article class="team-card">
-
-                <img
-                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=85"
-                    alt="Placeholder team member profile"
-                >
-
-                <h3>Team Member 1</h3>
-
-                <div class="designation">
-                    Program Director
+                <div>
+                    <!-- Replace with approved founder photograph -->
+                    <img
+                        src="images/dr-gautham.jpg"
+                        alt="Dr. Gautham Kolluri"
+                        class="profile-image"
+                        onerror="this.style.display='none';"
+                    >
                 </div>
 
-                <p>
-                    Placeholder biography.
-                    Replace this description with the approved
-                    profile and professional background.
-                </p>
+                <div class="profile-content">
 
-            </article>
+                    <span class="about-label">
+                        MEET OUR FOUNDER & INNOVATOR
+                    </span>
 
+                    <h2>Dr. Gautham Kolluri, RCIC</h2>
 
+                    <div class="profile-role">
+                        Founder & Innovator
+                    </div>
 
-            <!-- PROFILE 2 -->
+                    <h3>Welcome Message from Dr. Kolluri</h3>
 
-            <article class="team-card">
+                    <p>
+                        Learn about our approach to Canadian immigration
+                        and how we can help you achieve your dreams.
+                    </p>
 
-                <img
-                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=85"
-                    alt="Placeholder team member profile"
-                >
+                    <div class="quote-box">
+                        "I founded Canada's first true virtual immigration
+                        platform because I believe everyone deserves access
+                        to expert immigration services, regardless of where
+                        they are or what time it is. Technology has allowed
+                        us to serve clients 24/7 with the same quality and
+                        care as traditional services."
 
-                <h3>Team Member 2</h3>
+                        <div class="quote-author">
+                            — Dr. Gautham Kolluri, RCIC
+                        </div>
+                    </div>
 
-                <div class="designation">
-                    Startup Mentor
+                    <div class="credentials">
+
+                        <h3>Credentials & Qualifications</h3>
+
+                        <ul>
+                            <li>
+                                Regulated Canadian Immigration Consultant (RCIC)
+                            </li>
+
+                            <li>
+                                Professional Diploma in Immigration
+                            </li>
+
+                            <li>
+                                Founder of Canada's First Virtual Immigration Platform
+                            </li>
+                        </ul>
+
+                    </div>
+
                 </div>
 
-                <p>
-                    Placeholder biography.
-                    Replace this description with the approved
-                    profile and professional background.
-                </p>
-
-            </article>
+            </div>
 
 
+            <!-- PERSON 2: RAVI -->
 
-            <!-- PROFILE 3 -->
+            <div class="profile-card">
 
-            <article class="team-card">
-
-                <img
-                    src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=85"
-                    alt="Placeholder team member profile"
-                >
-
-                <h3>Team Member 3</h3>
-
-                <div class="designation">
-                    Innovation Coordinator
+                <div>
+                    <!-- Add Ravi's approved profile photo here -->
+                    <img
+                        src="images/ravi.jpg"
+                        alt="Ravi"
+                        class="profile-image"
+                        onerror="this.style.display='none';"
+                    >
                 </div>
 
-                <p>
-                    Placeholder biography.
-                    Replace this description with the approved
-                    profile and professional background.
-                </p>
+                <div class="profile-content">
 
-            </article>
+                    <span class="about-label">
+                        MEET OUR TEAM
+                    </span>
 
+                    <h2>Ravi</h2>
 
-        </div>
+                    <div class="profile-role">
+                        Professional Profile
+                    </div>
 
+                    <p>
+                        Learn more about Ravi's professional background,
+                        experience, and contributions through his LinkedIn
+                        profile.
+                    </p>
 
-    </div>
+                    <a
+                        href="https://www.linkedin.com/in/ravicm/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="linkedin-button"
+                    >
+                        View LinkedIn Profile ↗
+                    </a>
 
-</section>
+                </div>
 
-
-</main>
-
-
-
-<!-- FOOTER -->
-
-<footer class="site-footer">
-
-    <div class="container footer-main">
-
-        <div>
-
-            <a href="index.html" class="brand brand-footer">
-
-                <span class="brand-mark">CIP</span>
-
-                <span class="brand-sub">
-                    INNOVATION & INCUBATION HUB
-                </span>
-
-            </a>
-
-            <p>
-                Encouraging student innovation,
-                entrepreneurship and practical
-                project development while studying in Canada.
-            </p>
+            </div>
 
         </div>
 
-
-        <div class="footer-nav">
-
-            <strong>Quick Links</strong>
-
-            <a href="index.html">Home</a>
-
-            <a href="about.html">About Us</a>
-
-            <a href="index.html#our-help">Our Help</a>
-
-            <a href="index.html#your-idea">Your Idea</a>
-
-        </div>
+    </section>
 
 
-    </div>
+    <!-- FOOTER -->
+    <footer class="about-footer">
+
+        <p>
+            © 2026 CIP Innovation & Incubation Hub.
+            All Rights Reserved.
+        </p>
+
+    </footer>
 
 
-    <div class="container footer-bottom">
+    <!-- MOBILE NAVIGATION -->
+    <script>
+        const menuToggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
 
-        © 2026 CIP Innovation & Incubation Hub.
-        All rights reserved.
-
-    </div>
-
-</footer>
-
-
-
-<!-- MOBILE MENU JAVASCRIPT -->
-
-<script>
-
-    const menuToggle = document.getElementById("menuToggle");
-
-    const mainNav = document.getElementById("mainNav");
-
-
-    menuToggle.addEventListener("click", function () {
-
-        mainNav.classList.toggle("open");
-
-    });
-
-
-    document.querySelectorAll(".main-nav a").forEach(function (link) {
-
-        link.addEventListener("click", function () {
-
-            mainNav.classList.remove("open");
-
+        menuToggle.addEventListener("click", function () {
+            navLinks.classList.toggle("active");
         });
 
-    });
-
-</script>
-
+        document.querySelectorAll(".nav-links a").forEach(function(link) {
+            link.addEventListener("click", function() {
+                navLinks.classList.remove("active");
+            });
+        });
+    </script>
 
 </body>
-
 </html>

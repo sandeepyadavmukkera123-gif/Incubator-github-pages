@@ -1,206 +1,704 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Meet the people behind the CIP Innovation & Incubation Hub.">
-  <title>About Us | CIP Innovation &amp; Incubation Hub</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Us | CIP Innovation & Incubation Hub</title>
+
+    <style>
+
+        /* =========================
+           GLOBAL STYLES
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #202c45;
+            color: white;
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        header {
+            background: #ffffff;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1400px;
+            margin: auto;
+            padding: 18px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo a {
+            text-decoration: none;
+            color: #202c45;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #202c45;
+            font-size: 15px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #c9232b;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: #c9232b;
+            color: white;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 7px;
+            font-size: 23px;
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           ABOUT US HERO
+        ========================= */
+
+        .about-hero {
+            text-align: center;
+            padding: 65px 20px 50px;
+            background: #202c45;
+        }
+
+        .section-label {
+            display: inline-block;
+            background: #c9232b;
+            color: white;
+            padding: 11px 25px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .about-hero h1 {
+            font-size: 38px;
+            margin-bottom: 18px;
+        }
+
+        .about-hero p {
+            max-width: 800px;
+            margin: auto;
+            color: #e1e6ef;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           TEAM SECTION
+        ========================= */
+
+        .team-section {
+            background: #202c45;
+            padding: 35px 5% 80px;
+        }
+
+        .team-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .team-heading h2 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .team-heading p {
+            color: #cbd3df;
+        }
+
+        .team-container {
+            max-width: 1200px;
+            margin: auto;
+
+            display: grid;
+
+            /* Two profiles side by side */
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+
+            gap: 30px;
+            align-items: stretch;
+        }
+
+
+        /* =========================
+           CLICKABLE PROFILE LINKS
+        ========================= */
+
+        .profile-link {
+            display: block;
+            color: inherit;
+            text-decoration: none;
+            height: 100%;
+            border-radius: 18px;
+        }
+
+        .profile-link:focus-visible {
+            outline: 3px solid #ff7777;
+            outline-offset: 5px;
+        }
+
+
+        /* =========================
+           PROFILE CARDS
+        ========================= */
+
+        .profile-card {
+            background: #293650;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 18px;
+            padding: 30px;
+            height: 100%;
+
+            display: flex;
+            flex-direction: column;
+
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .profile-link:hover .profile-card {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto 22px;
+            border: 4px solid #c9232b;
+            background: #e4e7ec;
+        }
+
+        .profile-content {
+            text-align: center;
+        }
+
+        .profile-label {
+            display: inline-block;
+            background: #c9232b;
+            color: white;
+            padding: 8px 17px;
+            border-radius: 25px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .profile-content h2 {
+            font-size: 25px;
+            margin-bottom: 8px;
+        }
+
+        .profile-role {
+            color: #ff7777;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .profile-description {
+            color: #e0e5ed;
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+
+        /* =========================
+           FOUNDER QUOTE
+        ========================= */
+
+        .quote-box {
+            text-align: left;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 13px;
+            margin: 15px 0 25px;
+            color: #e9edf5;
+            font-style: italic;
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .quote-author {
+            color: #ff7777;
+            font-weight: bold;
+            text-align: right;
+            margin-top: 12px;
+            font-style: normal;
+        }
+
+
+        /* =========================
+           CREDENTIALS
+        ========================= */
+
+        .credentials {
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        .credentials h3 {
+            font-size: 19px;
+            margin-bottom: 15px;
+        }
+
+        .credentials ul {
+            list-style: none;
+        }
+
+        .credentials li {
+            padding: 10px 0;
+            color: #e1e6ef;
+            font-size: 14px;
+        }
+
+        .credentials li::before {
+            content: "✓";
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 21px;
+            height: 21px;
+            border: 2px solid #d52d35;
+            border-radius: 50%;
+            color: #ff7777;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #172238;
+            color: #dce2eb;
+            padding: 28px 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           TABLET RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .navbar {
+                padding: 15px 4%;
+            }
+
+            .nav-links {
+                gap: 14px;
+            }
+
+            .nav-links a {
+                font-size: 13px;
+            }
+
+            .profile-card {
+                padding: 22px;
+            }
+
+        }
+
+
+        /* =========================
+           MOBILE RESPONSIVE
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            .navbar {
+                flex-wrap: wrap;
+            }
+
+            .logo a {
+                font-size: 19px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+                padding: 20px 0 5px;
+                gap: 18px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .about-hero {
+                padding: 45px 20px;
+            }
+
+            .about-hero h1 {
+                font-size: 28px;
+            }
+
+            .about-hero p {
+                font-size: 15px;
+            }
+
+            /* Stack profiles vertically on mobile */
+
+            .team-container {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+            }
+
+            .profile-card {
+                padding: 23px;
+            }
+
+            .team-heading h2 {
+                font-size: 25px;
+            }
+
+        }
+
+    </style>
+
 </head>
 
 <body>
 
-<header class="site-header">
-  <div class="container nav-wrap">
 
-    <a class="brand" href="index.html" aria-label="CIP Innovation and Incubation Hub home">
-      <span class="brand-mark">CIP</span>
-      <span class="brand-sub">INNOVATION &amp; INCUBATION HUB</span>
-    </a>
+    <!-- =========================
+         NAVIGATION BAR
+    ========================= -->
 
-    <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <header>
 
-    <nav class="main-nav" aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="about.html" class="active" aria-current="page">About Us</a>
-      <a href="index.html#canada">Student Entrepreneurship</a>
-      <a href="index.html#support">Our Help</a>
-      <a href="get-started.html" class="nav-cta">Submit your Idea <span aria-hidden="true">→</span></a>
-    </nav>
+        <nav class="navbar">
 
-  </div>
-</header>
+            <div class="logo">
+                <a href="index.html">CIP Innovation Hub</a>
+            </div>
 
-<main>
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Toggle navigation"
+                aria-expanded="false">
 
-  <!-- ABOUT INTRODUCTION -->
+                ☰
 
-  <section class="inner-hero about-hero">
-    <div class="container">
-      <span class="eyebrow eyebrow-light">ABOUT CIP INNOVATION HUB</span>
-      <h1>
-        Meet the People
-        <span>Behind Our Vision.</span>
-      </h1>
-      <p>
-        We believe students have the creativity and potential to build
-        meaningful solutions. Our goal is to encourage student innovation,
-        support entrepreneurship and help turn ideas into opportunities.
-      </p>
-    </div>
-  </section>
+            </button>
 
+            <ul class="nav-links" id="navLinks">
 
-  <!-- FOUNDER -->
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
 
-  <section class="section founder-section">
-    <div class="container">
+                <li>
+                    <a href="about.html" class="active">About Us</a>
+                </li>
 
-      <div class="founder-head">
-        <img class="founder-avatar"
-             src="images/dr-gautham.jpg"
-             alt="Dr. Gautham Kolluri"
-             onerror="this.style.display='none';">
-        <span class="eyebrow eyebrow-light">MEET OUR FOUNDER &amp; INNOVATOR</span>
-        <h2>Dr. Gautham Kolluri, RCIC</h2>
-        <p class="founder-id">RCIC #R535191</p>
-      </div>
+                <li>
+                    <a href="index.html#student-entrepreneurship">
+                        Student Entrepreneurship
+                    </a>
+                </li>
 
-      <div class="founder-layout">
+                <li>
+                    <a href="index.html#our-help">Our Help</a>
+                </li>
 
-        <!-- Save the photo collage as images/founder-collage.jpg -->
-        <figure class="founder-photo">
-          <img src="images/founder-collage.jpg"
-               alt="Dr. Gautham Kolluri with CIP students"
-               onerror="this.parentElement.style.display='none';">
-        </figure>
+                <li>
+                    <a href="index.html#your-idea">Submit your Idea</a>
+                </li>
 
-        <div class="founder-copy">
-
-          <h3>Welcome Message from Dr. Kolluri</h3>
-          <p>
-            Learn about our approach to Canadian immigration
-            and how we can help you achieve your dreams.
-          </p>
-
-          <blockquote class="founder-quote">
-            "I founded Canada's first true virtual immigration platform
-            because I believe everyone deserves access to expert immigration
-            services, regardless of where they are or what time it is.
-            Technology has allowed us to serve clients 24/7 with the same
-            quality and care as traditional services."
-            <cite>— Dr. Gautham Kolluri, RCIC</cite>
-          </blockquote>
-
-          <div class="founder-credentials">
-            <h3><span class="cred-icon"><i class="emoji" aria-hidden="true">🎓</i></span> Credentials &amp; Qualifications</h3>
-            <ul>
-              <li>Regulated Canadian Immigration Consultant (RCIC)</li>
-              <li>Professional Diploma in Immigration</li>
-              <li>Founder of Canada's First Virtual Immigration Platform</li>
             </ul>
-          </div>
 
-          <a class="btn btn-primary"
-             href="https://www.linkedin.com/in/gauthamkolluri/"
-             target="_blank"
-             rel="noopener noreferrer">
-            Connect on LinkedIn <span>↗</span>
-          </a>
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         ABOUT US INTRODUCTION
+    ========================= -->
+
+    <section class="about-hero">
+
+        <span class="section-label">
+            ABOUT CIP INNOVATION HUB
+        </span>
+
+        <h1>Meet the People Behind Our Vision</h1>
+
+        <p>
+            We believe students have the creativity and potential
+            to build meaningful solutions. Our goal is to encourage
+            student innovation, support entrepreneurship, and help
+            turn ideas into opportunities.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         TEAM PROFILES
+    ========================= -->
+
+    <section class="team-section">
+
+        <div class="team-heading">
+
+            <h2>Our Leadership & Team</h2>
+
+            <p>
+                Meet the people supporting innovation and entrepreneurship.
+            </p>
 
         </div>
 
-      </div>
 
-    </div>
-  </section>
+        <div class="team-container">
 
 
-  <!-- TEAM -->
+            <!-- =====================================
+                 FIRST PROFILE: DR. GAUTHAM KOLLURI
+                 LEFT SIDE
+            ====================================== -->
 
-  <section class="section section-tint">
-    <div class="container">
+            <a
+                href="https://www.linkedin.com/in/gauthamkolluri/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="profile-link"
+                aria-label="Open Dr. Gautham Kolluri's LinkedIn profile">
 
-      <div class="section-heading">
-        <span class="eyebrow">OUR TEAM</span>
-        <h2>The People Supporting Innovation</h2>
-        <p>Meet the people supporting innovation and entrepreneurship at the hub.</p>
-      </div>
+                <div class="profile-card">
 
-      <div class="team-grid team-grid-single">
+                    <div class="profile-content">
 
-        <a class="profile-link"
-           href="https://www.linkedin.com/in/ravicm/"
-           target="_blank"
-           rel="noopener noreferrer"
-           aria-label="Open Ravi's LinkedIn profile">
+                        <img
+                            src="images/dr-gautham.jpg"
+                            alt="Dr. Gautham Kolluri"
+                            class="profile-image"
+                            onerror="this.style.display='none';"
+                        >
 
-          <div class="profile-card">
+                        <span class="profile-label">
+                            FOUNDER & INNOVATOR
+                        </span>
 
-            <img class="profile-image"
-                 src="images/ravi.jpg"
-                 alt="Ravi"
-                 onerror="this.style.display='none';">
+                        <h2>Dr. Gautham Kolluri</h2>
 
-            <h2>Ravi</h2>
-            <div class="profile-role">Professional Profile</div>
+                        <div class="profile-role">
+                            RCIC #R535191
+                        </div>
 
-            <p class="profile-description">
-              Meet Ravi and learn more about his professional
-              background, experience and contributions.
-            </p>
+                        <h3>Welcome Message</h3>
 
-            <span class="profile-linkedin">View LinkedIn profile ↗</span>
+                        <p class="profile-description">
+                            Learn about our approach to Canadian immigration
+                            and how we can help you achieve your dreams.
+                        </p>
 
-          </div>
-        </a>
-
-      </div>
-
-    </div>
-  </section>
-
-</main>
+                    </div>
 
 
-<!-- FOOTER -->
+                    <div class="quote-box">
 
-<footer class="site-footer">
-  <div class="container footer-main">
+                        "I founded Canada's first true virtual immigration
+                        platform because I believe everyone deserves access
+                        to expert immigration services, regardless of where
+                        they are or what time it is. Technology has allowed
+                        us to serve clients 24/7 with the same quality and
+                        care as traditional services."
 
-    <div>
-      <a class="brand brand-footer" href="index.html">
-        <span class="brand-mark">CIP</span>
-        <span class="brand-sub">INNOVATION &amp; INCUBATION HUB</span>
-      </a>
-      <p>
-        Helping international students explore ideas, develop products
-        and build practical experience in Canada.
-      </p>
-    </div>
+                        <div class="quote-author">
+                            — Dr. Gautham Kolluri, RCIC
+                        </div>
 
-    <div class="footer-nav">
-      <strong>Explore</strong>
-      <a href="index.html#canada">Student Entrepreneurship</a>
-      <a href="about.html">About Us</a>
-      <a href="projects.html">Student Projects</a>
-      <a href="get-started.html">Submit your Idea</a>
-    </div>
+                    </div>
 
-    <div class="footer-nav">
-      <strong>Get in touch</strong>
-      <a href="mailto:info@cipstudyabroad.com">info@cipstudyabroad.com</a>
-      <a href="https://www.cipstudyabroad.com/" target="_blank" rel="noopener">CIP Study Abroad ↗</a>
-    </div>
 
-  </div>
+                    <div class="credentials">
 
-  <div class="footer-bottom">
-    <div class="container">© 2026 CIP Innovation &amp; Incubation Hub. All rights reserved.</div>
-  </div>
-</footer>
+                        <h3>Credentials & Qualifications</h3>
 
-<script src="script.js"></script>
+                        <ul>
+
+                            <li>
+                                Regulated Canadian Immigration Consultant (RCIC)
+                            </li>
+
+                            <li>
+                                Professional Diploma in Immigration
+                            </li>
+
+                            <li>
+                                Founder of Canada's First Virtual Immigration Platform
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- =====================================
+                 SECOND PROFILE: RAVI
+                 RIGHT SIDE
+            ====================================== -->
+
+            <a
+                href="https://www.linkedin.com/in/ravicm/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="profile-link"
+                aria-label="Open Ravi's LinkedIn profile">
+
+                <div class="profile-card">
+
+                    <div class="profile-content">
+
+                        <img
+                            src="images/ravi.jpg"
+                            alt="Ravi"
+                            class="profile-image"
+                            onerror="this.style.display='none';"
+                        >
+
+                        <span class="profile-label">
+                            OUR TEAM
+                        </span>
+
+                        <h2>Ravi</h2>
+
+                        <div class="profile-role">
+                            Professional Profile
+                        </div>
+
+                        <p class="profile-description">
+                            Meet Ravi and learn more about his professional
+                            background, experience, and contributions.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <p>
+            © 2026 CIP Innovation & Incubation Hub.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- =========================
+         MOBILE NAVIGATION SCRIPT
+    ========================= -->
+
+    <script>
+
+        const menuToggle = document.getElementById("menuToggle");
+
+        const navLinks = document.getElementById("navLinks");
+
+
+        menuToggle.addEventListener("click", function () {
+
+            navLinks.classList.toggle("active");
+
+            const isExpanded =
+                menuToggle.getAttribute("aria-expanded") === "true";
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                String(!isExpanded)
+            );
+
+        });
+
+
+        document.querySelectorAll(".nav-links a").forEach(function(link) {
+
+            link.addEventListener("click", function() {
+
+                navLinks.classList.remove("active");
+
+                menuToggle.setAttribute("aria-expanded", "false");
+
+            });
+
+        });
+
+    </script>
 
 </body>
+
 </html>

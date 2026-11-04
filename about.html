@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -75,6 +75,19 @@
             color: #c9232b;
         }
 
+        /* FEEDBACK 3: "Submit Your Idea" nav button */
+        .nav-links a.nav-cta {
+            background: #c9232b;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 6px;
+        }
+
+        .nav-links a.nav-cta:hover {
+            background: #a81c23;
+            color: #ffffff;
+        }
+
         .menu-toggle {
             display: none;
             background: #c9232b;
@@ -148,12 +161,9 @@
         .team-container {
             max-width: 1200px;
             margin: auto;
-
             display: grid;
-
             /* Two profiles side by side */
             grid-template-columns: repeat(2, minmax(0, 1fr));
-
             gap: 30px;
             align-items: stretch;
         }
@@ -187,10 +197,8 @@
             border-radius: 18px;
             padding: 30px;
             height: 100%;
-
             display: flex;
             flex-direction: column;
-
             transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
         }
@@ -213,17 +221,6 @@
 
         .profile-content {
             text-align: center;
-        }
-
-        .profile-label {
-            display: inline-block;
-            background: #c9232b;
-            color: white;
-            padding: 8px 17px;
-            border-radius: 25px;
-            font-size: 12px;
-            font-weight: bold;
-            margin-bottom: 15px;
         }
 
         .profile-content h2 {
@@ -391,7 +388,6 @@
             }
 
             /* Stack profiles vertically on mobile */
-
             .team-container {
                 grid-template-columns: 1fr;
                 max-width: 500px;
@@ -431,20 +427,14 @@
                 id="menuToggle"
                 aria-label="Toggle navigation"
                 aria-expanded="false">
-
                 ☰
-
             </button>
 
             <ul class="nav-links" id="navLinks">
 
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
+                <li><a href="index.html">Home</a></li>
 
-                <li>
-                    <a href="about.html" class="active">About Us</a>
-                </li>
+                <li><a href="about.html" class="active">About Us</a></li>
 
                 <li>
                     <a href="index.html#student-entrepreneurship">
@@ -452,13 +442,10 @@
                     </a>
                 </li>
 
-                <li>
-                    <a href="index.html#our-help">Our Help</a>
-                </li>
+                <li><a href="index.html#our-help">Our Help</a></li>
 
-                <li>
-                    <a href="index.html#your-idea">Your Idea</a>
-                </li>
+                <!-- FEEDBACK 3: "Your Idea" is now a "Submit Your Idea" button -->
+                <li><a href="get-started.html" class="nav-cta">Submit Your Idea</a></li>
 
             </ul>
 
@@ -509,10 +496,8 @@
         <div class="team-container">
 
 
-            <!-- =====================================
-                 FIRST PROFILE: DR. GAUTHAM KOLLURI
-                 LEFT SIDE
-            ====================================== -->
+            <!-- FIRST PROFILE: DR. GAUTHAM KOLLURI -->
+            <!-- FEEDBACK 4: "FOUNDER & INNOVATOR" tag removed -->
 
             <a
                 href="https://www.linkedin.com/in/gauthamkolluri/"
@@ -531,10 +516,6 @@
                             class="profile-image"
                             onerror="this.style.display='none';"
                         >
-
-                        <span class="profile-label">
-                            FOUNDER & INNOVATOR
-                        </span>
 
                         <h2>Dr. Gautham Kolluri</h2>
 
@@ -573,19 +554,9 @@
                         <h3>Credentials & Qualifications</h3>
 
                         <ul>
-
-                            <li>
-                                Regulated Canadian Immigration Consultant (RCIC)
-                            </li>
-
-                            <li>
-                                Professional Diploma in Immigration
-                            </li>
-
-                            <li>
-                                Founder of Canada's First Virtual Immigration Platform
-                            </li>
-
+                            <li>Regulated Canadian Immigration Consultant (RCIC)</li>
+                            <li>Professional Diploma in Immigration</li>
+                            <li>Founder of Canada's First Virtual Immigration Platform</li>
                         </ul>
 
                     </div>
@@ -595,10 +566,8 @@
             </a>
 
 
-            <!-- =====================================
-                 SECOND PROFILE: RAVI
-                 RIGHT SIDE
-            ====================================== -->
+            <!-- SECOND PROFILE: RAVI -->
+            <!-- FEEDBACK 4: "OUR TEAM" tag removed -->
 
             <a
                 href="https://www.linkedin.com/in/ravicm/"
@@ -617,10 +586,6 @@
                             class="profile-image"
                             onerror="this.style.display='none';"
                         >
-
-                        <span class="profile-label">
-                            OUR TEAM
-                        </span>
 
                         <h2>Ravi</h2>
 
@@ -650,12 +615,10 @@
     ========================= -->
 
     <footer>
-
         <p>
             © 2026 CIP Innovation & Incubation Hub.
             All Rights Reserved.
         </p>
-
     </footer>
 
 
@@ -666,35 +629,20 @@
     <script>
 
         const menuToggle = document.getElementById("menuToggle");
-
         const navLinks = document.getElementById("navLinks");
 
-
         menuToggle.addEventListener("click", function () {
-
             navLinks.classList.toggle("active");
 
-            const isExpanded =
-                menuToggle.getAttribute("aria-expanded") === "true";
-
-            menuToggle.setAttribute(
-                "aria-expanded",
-                String(!isExpanded)
-            );
-
+            const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
+            menuToggle.setAttribute("aria-expanded", String(!isExpanded));
         });
 
-
-        document.querySelectorAll(".nav-links a").forEach(function(link) {
-
-            link.addEventListener("click", function() {
-
+        document.querySelectorAll(".nav-links a").forEach(function (link) {
+            link.addEventListener("click", function () {
                 navLinks.classList.remove("active");
-
                 menuToggle.setAttribute("aria-expanded", "false");
-
             });
-
         });
 
     </script>

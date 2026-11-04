@@ -12,6 +12,7 @@
     --line: #e4ebf0;
     --white: #ffffff;
     --shadow: 0 12px 35px rgba(10, 31, 53, 0.08);
+    --emoji: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
 }
 
 * {
@@ -98,12 +99,25 @@ button {
     font-size: 12px;
     font-weight: 700;
     color: var(--navy);
-    transition: color 0.2s;
+    transition: color 0.2s, background 0.2s;
 }
 
 .main-nav a:hover,
 .main-nav a.active {
     color: var(--teal-dark);
+}
+
+/* FEEDBACK 3: "Submit Your Idea" nav button */
+.main-nav a.nav-cta {
+    background: var(--teal);
+    color: #ffffff;
+    padding: 11px 20px;
+    border-radius: 5px;
+}
+
+.main-nav a.nav-cta:hover {
+    background: var(--teal-dark);
+    color: #ffffff;
 }
 
 .menu-toggle {
@@ -230,45 +244,7 @@ button {
 }
 
 
-/* LEFT AND RIGHT ARROWS */
-
-.slider-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-
-    width: 48px;
-    height: 48px;
-
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    border-radius: 50%;
-
-    background: rgba(255, 255, 255, 0.9);
-    color: var(--navy);
-
-    font-size: 20px;
-    cursor: pointer;
-
-    transition: 0.2s;
-}
-
-.slider-arrow:hover {
-    background: var(--teal);
-    color: white;
-    border-color: var(--teal);
-}
-
-.slider-arrow.prev {
-    left: 25px;
-}
-
-.slider-arrow.next {
-    right: 25px;
-}
-
-
-/* SLIDE NUMBERS */
+/* FEEDBACK 1: SLIDE CONTROLS  ‹ 1 2 3 › */
 
 .hero-controls {
     position: absolute;
@@ -278,9 +254,11 @@ button {
     z-index: 10;
 
     display: flex;
+    align-items: center;
     gap: 12px;
 }
 
+.slider-arrow,
 .slide-dot {
     width: 38px;
     height: 38px;
@@ -296,6 +274,17 @@ button {
 
     cursor: pointer;
     transition: 0.2s;
+}
+
+.slider-arrow {
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.slider-arrow:hover {
+    background: var(--teal);
+    border-color: var(--teal);
+    color: #ffffff;
 }
 
 .slide-dot:hover,
@@ -388,17 +377,19 @@ button {
     border-color: var(--mint);
 }
 
+/* FEEDBACK 2: colourful icons */
 .benefit-icon {
-    width: 47px;
-    height: 47px;
+    width: 52px;
+    height: 52px;
     display: grid;
     place-items: center;
 
     background: #e7f7f5;
-    color: var(--teal-dark);
 
-    font-size: 25px;
-    border-radius: 9px;
+    font-family: var(--emoji);
+    font-size: 27px;
+    line-height: 1;
+    border-radius: 12px;
     margin-bottom: 23px;
 }
 
@@ -504,10 +495,12 @@ button {
     font-weight: 850;
 }
 
+/* FEEDBACK 2: colourful icons */
 .support-symbol {
-    font-size: 29px;
-    color: var(--teal);
-    margin: 17px 0 12px;
+    font-family: var(--emoji);
+    font-size: 32px;
+    line-height: 1;
+    margin: 17px 0 14px;
 }
 
 .support-item h3 {
@@ -587,14 +580,27 @@ button {
 }
 
 
-/* FUNDING CARD */
+/* FEEDBACK 5: CLICKABLE FUNDING CARD */
 
 .funding-card {
+    display: block;
     overflow: hidden;
     border-radius: 13px;
     background: var(--navy);
     color: #ffffff;
     box-shadow: 0 20px 45px rgba(16, 39, 68, 0.18);
+    cursor: pointer;
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.funding-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 26px 55px rgba(16, 39, 68, 0.28);
+}
+
+.funding-card:focus-visible {
+    outline: 3px solid var(--teal);
+    outline-offset: 4px;
 }
 
 .funding-top {
@@ -629,6 +635,11 @@ button {
     margin: 12px 0;
 
     border-radius: 8px;
+    transition: background 0.25s;
+}
+
+.funding-card:hover .funding-row {
+    background: #f1fbf9;
 }
 
 .funding-row small {
@@ -649,13 +660,35 @@ button {
 .funding-arrow {
     font-size: 21px;
     color: var(--teal);
+    transition: transform 0.25s;
+}
+
+.funding-card:hover .funding-arrow {
+    transform: translate(3px, -3px);
 }
 
 .funding-note {
     font-size: 10px;
     line-height: 1.7;
     color: #c4d2df;
-    padding: 8px 30px 25px;
+    padding: 8px 30px 12px;
+}
+
+.funding-cta {
+    display: block;
+    margin: 0 20px 22px;
+    padding: 13px;
+    border-radius: 6px;
+    background: var(--teal);
+    color: #ffffff;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 800;
+    transition: background 0.25s;
+}
+
+.funding-card:hover .funding-cta {
+    background: var(--teal-dark);
 }
 
 
@@ -695,8 +728,8 @@ button {
     place-items: center;
 
     background: #e7f7f5;
-    color: var(--teal-dark);
 
+    font-family: var(--emoji);
     font-size: 24px;
 }
 
@@ -957,6 +990,13 @@ button {
         font-size: 13px;
     }
 
+    .main-nav a.nav-cta {
+        margin-top: 14px;
+        padding: 13px;
+        border-bottom: none;
+        text-align: center;
+    }
+
     .hero {
         height: 570px;
     }
@@ -1034,18 +1074,15 @@ button {
         );
     }
 
-    .slider-arrow {
-        width: 38px;
-        height: 38px;
-        font-size: 16px;
+    .hero-controls {
+        gap: 9px;
+        bottom: 28px;
     }
 
-    .slider-arrow.prev {
-        left: 10px;
-    }
-
-    .slider-arrow.next {
-        right: 10px;
+    .slider-arrow,
+    .slide-dot {
+        width: 34px;
+        height: 34px;
     }
 
     .benefit-grid,
@@ -1063,7 +1100,7 @@ button {
     }
 
     .funding-note {
-        padding: 8px 23px 23px;
+        padding: 8px 23px 12px;
     }
 
     .product-callout {

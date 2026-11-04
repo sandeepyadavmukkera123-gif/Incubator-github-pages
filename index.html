@@ -23,7 +23,7 @@
             <span class="brand-sub">INNOVATION & INCUBATION HUB</span>
         </a>
 
-        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
             ☰
         </button>
 
@@ -32,7 +32,8 @@
             <a href="about.html">About Us</a>
             <a href="#student-entrepreneurship">Student Entrepreneurship</a>
             <a href="#our-help">Our Help</a>
-            <a href="#your-idea">Your Idea</a>
+            <!-- FEEDBACK 3: "Your Idea" is now a "Submit Your Idea" button -->
+            <a href="get-started.html" class="nav-cta">Submit Your Idea</a>
         </nav>
 
     </div>
@@ -67,7 +68,7 @@
                 Explore ideas, solve real-world challenges and build something meaningful.
             </p>
 
-            <a href="#your-idea" class="btn btn-primary">
+            <a href="get-started.html" class="btn btn-primary">
                 Submit Your Idea →
             </a>
 
@@ -135,24 +136,14 @@
     </article>
 
 
-    <!-- Previous button -->
-    <button class="slider-arrow prev"
-        id="prevSlide"
-        aria-label="Previous slide">
-        &#10094;
-    </button>
-
-
-    <!-- Next button -->
-    <button class="slider-arrow next"
-        id="nextSlide"
-        aria-label="Next slide">
-        &#10095;
-    </button>
-
-
-    <!-- Numbered slide controls -->
+    <!-- FEEDBACK 1: Previous / Next buttons now sit next to the slide numbers -->
     <div class="hero-controls">
+
+        <button class="slider-arrow"
+            id="prevSlide"
+            aria-label="Previous slide">
+            &#10094;
+        </button>
 
         <button class="slide-dot active"
             data-slide="0"
@@ -170,6 +161,12 @@
             data-slide="2"
             aria-label="Show slide 3">
             3
+        </button>
+
+        <button class="slider-arrow"
+            id="nextSlide"
+            aria-label="Next slide">
+            &#10095;
         </button>
 
     </div>
@@ -208,11 +205,12 @@
         </div>
 
 
+        <!-- FEEDBACK 2: colourful icons instead of monochrome symbols -->
         <div class="benefit-grid">
 
             <article class="benefit-card">
 
-                <div class="benefit-icon">⌂</div>
+                <div class="benefit-icon">🍁</div>
 
                 <span class="card-index">
                     01 / MARKET OPPORTUNITY
@@ -231,7 +229,7 @@
 
             <article class="benefit-card">
 
-                <div class="benefit-icon">◎</div>
+                <div class="benefit-icon">🤝</div>
 
                 <span class="card-index">
                     02 / REAL-LIFE CHALLENGES
@@ -250,7 +248,7 @@
 
             <article class="benefit-card">
 
-                <div class="benefit-icon">↗</div>
+                <div class="benefit-icon">🛠️</div>
 
                 <span class="card-index">
                     03 / PRACTICAL EXPERIENCE
@@ -269,7 +267,7 @@
 
             <article class="benefit-card">
 
-                <div class="benefit-icon">✦</div>
+                <div class="benefit-icon">🎓</div>
 
                 <span class="card-index">
                     04 / CAREER READINESS
@@ -322,13 +320,14 @@
         </div>
 
 
+        <!-- FEEDBACK 2: colourful icons instead of monochrome symbols -->
         <div class="support-grid">
 
             <article class="support-item">
 
                 <span class="support-number">01</span>
 
-                <div class="support-symbol">◷</div>
+                <div class="support-symbol">📅</div>
 
                 <h3>Monthly Innovation Meetings</h3>
 
@@ -344,7 +343,7 @@
 
                 <span class="support-number">02</span>
 
-                <div class="support-symbol">✳</div>
+                <div class="support-symbol">💡</div>
 
                 <h3>Project Ideas & Collaboration</h3>
 
@@ -360,7 +359,7 @@
 
                 <span class="support-number">03</span>
 
-                <div class="support-symbol">⌁</div>
+                <div class="support-symbol">🧭</div>
 
                 <h3>Guidance & Mentorship</h3>
 
@@ -376,7 +375,7 @@
 
                 <span class="support-number">04</span>
 
-                <div class="support-symbol">$</div>
+                <div class="support-symbol">💰</div>
 
                 <h3>Financial Assistance</h3>
 
@@ -453,9 +452,10 @@
             </div>
 
 
-            <!-- Funding card -->
+            <!-- FEEDBACK 5: whole funding card is now a link to the Submit Idea page -->
 
-            <aside class="funding-card">
+            <a href="get-started.html" class="funding-card"
+               aria-label="Potential financial assistance - submit your idea">
 
                 <div class="funding-top">
 
@@ -507,7 +507,9 @@
                     Confirm current terms with the CIP team.
                 </p>
 
-            </aside>
+                <span class="funding-cta">Submit Your Idea →</span>
+
+            </a>
 
         </div>
 
@@ -516,7 +518,7 @@
 
         <a href="get-started.html" class="product-callout">
 
-            <span class="callout-icon">↗</span>
+            <span class="callout-icon">🚀</span>
 
             <span class="callout-copy">
 
@@ -586,7 +588,7 @@
 
             <a href="#our-help">Our Help</a>
 
-            <a href="#your-idea">Your Idea</a>
+            <a href="get-started.html">Submit Your Idea</a>
 
         </div>
 
@@ -621,106 +623,64 @@
     // SLIDESHOW
 
     const slides = document.querySelectorAll(".hero-slide");
-
     const dots = document.querySelectorAll(".slide-dot");
-
     const previousButton = document.getElementById("prevSlide");
-
     const nextButton = document.getElementById("nextSlide");
 
     let currentSlide = 0;
-
     let slideTimer;
 
-
     function showSlide(index) {
-
         slides[currentSlide].classList.remove("active");
-
         dots[currentSlide].classList.remove("active");
 
         currentSlide = (index + slides.length) % slides.length;
 
         slides[currentSlide].classList.add("active");
-
         dots[currentSlide].classList.add("active");
 
         resetTimer();
-
     }
-
 
     function nextSlide() {
-
         showSlide(currentSlide + 1);
-
     }
-
 
     function previousSlide() {
-
         showSlide(currentSlide - 1);
-
     }
-
 
     function resetTimer() {
-
         clearInterval(slideTimer);
-
         slideTimer = setInterval(nextSlide, 3500);
-
     }
 
-
     nextButton.addEventListener("click", nextSlide);
-
     previousButton.addEventListener("click", previousSlide);
 
-
     dots.forEach((dot) => {
-
         dot.addEventListener("click", () => {
-
-            const slideIndex = Number(dot.dataset.slide);
-
-            showSlide(slideIndex);
-
+            showSlide(Number(dot.dataset.slide));
         });
-
     });
 
 
     // MOBILE NAVIGATION
 
     const menuToggle = document.getElementById("menuToggle");
-
     const mainNav = document.getElementById("mainNav");
 
-
     menuToggle.addEventListener("click", () => {
-
         mainNav.classList.toggle("open");
-
-        const isOpen = mainNav.classList.contains("open");
-
-        menuToggle.setAttribute("aria-expanded", isOpen);
-
+        menuToggle.setAttribute("aria-expanded", mainNav.classList.contains("open"));
     });
 
-
     // Close mobile menu after selecting a link
-
     document.querySelectorAll(".main-nav a").forEach((link) => {
-
         link.addEventListener("click", () => {
-
             mainNav.classList.remove("open");
-
             menuToggle.setAttribute("aria-expanded", "false");
-
         });
-
     });
 
 
@@ -728,22 +688,11 @@
 
     const hero = document.querySelector(".hero");
 
-    hero.addEventListener("mouseenter", () => {
-
-        clearInterval(slideTimer);
-
-    });
-
-
-    hero.addEventListener("mouseleave", () => {
-
-        resetTimer();
-
-    });
+    hero.addEventListener("mouseenter", () => clearInterval(slideTimer));
+    hero.addEventListener("mouseleave", () => resetTimer());
 
 
     // Start automatic slideshow
-
     resetTimer();
 
 </script>

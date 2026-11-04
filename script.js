@@ -55,7 +55,7 @@ if (slides.length) {
     clearInterval(rotation);
 
     if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      rotation = setInterval(() => showSlide(activeSlide + 1), 5000);
+      rotation = setInterval(() => showSlide(activeSlide + 1), 3500);
     }
 
   }

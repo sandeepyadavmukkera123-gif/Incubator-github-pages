@@ -932,6 +932,303 @@ button {
 }
 
 
+/* ================= INNER PAGE HERO (Submit Idea / Projects) ================= */
+
+.page-hero {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 22, 42, 0.94),
+            rgba(5, 22, 42, 0.72)
+        ),
+        url("https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=2000&q=85")
+        center/cover;
+
+    color: #ffffff;
+    padding: 110px 0 95px;
+}
+
+.page-hero h1 {
+    max-width: 760px;
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 850;
+    line-height: 1.12;
+    letter-spacing: -1.5px;
+    margin-bottom: 20px;
+}
+
+.page-hero h1 span {
+    color: var(--mint);
+}
+
+.page-hero p {
+    max-width: 640px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #e2eaf1;
+    margin-bottom: 28px;
+}
+
+
+/* ================= STEPS ================= */
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    counter-reset: step;
+}
+
+.step-card {
+    position: relative;
+    background: #ffffff;
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    padding: 28px 23px;
+    transition: 0.25s;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+    border-color: var(--mint);
+}
+
+.step-number {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+
+    background: var(--teal);
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 900;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.step-card h3 {
+    font-size: 18px;
+    color: var(--navy);
+    margin-bottom: 10px;
+}
+
+.step-card p {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+
+/* ================= GUIDANCE + CONTACT CARD ================= */
+
+.guidance-layout {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 64px;
+}
+
+.guidance-copy h2 {
+    font-size: clamp(30px, 4vw, 40px);
+    line-height: 1.2;
+    color: var(--navy);
+    letter-spacing: -1px;
+    margin-bottom: 18px;
+}
+
+.guidance-copy p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.cta-card {
+    background: linear-gradient(135deg, #163a5c, #102744);
+    color: #ffffff;
+    border-radius: 13px;
+    padding: 36px 32px;
+    box-shadow: 0 20px 45px rgba(16, 39, 68, 0.18);
+}
+
+.cta-card-icon {
+    width: 60px;
+    height: 60px;
+    display: grid;
+    place-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    font-family: var(--emoji);
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.cta-card h3 {
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+.cta-card p {
+    font-size: 13px;
+    color: #cfdae5;
+    line-height: 1.8;
+    margin-bottom: 24px;
+}
+
+.cta-card small {
+    display: block;
+    margin-top: 14px;
+    font-size: 11px;
+    color: #aebdcb;
+}
+
+
+/* ================= FUNDING SECTION (Submit Idea page) ================= */
+
+.funding-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 760px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.funding-option {
+    background: #ffffff;
+    color: var(--navy);
+    border-radius: 10px;
+    padding: 28px;
+    border: 2px solid transparent;
+}
+
+.funding-option.featured {
+    border-color: var(--teal);
+}
+
+.funding-option span {
+    display: block;
+    font-size: 10px;
+    font-weight: 850;
+    letter-spacing: 1px;
+    color: #8290a0;
+}
+
+.funding-option strong {
+    display: block;
+    font-size: 32px;
+    color: var(--teal-dark);
+    margin: 6px 0 8px;
+}
+
+.funding-option p {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.fineprint {
+    text-align: center;
+    font-size: 11px;
+    color: #aebdcb;
+    margin-top: 25px;
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ================= STUDENT PROJECTS ================= */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.project-card {
+    background: #ffffff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.25s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.project-photo {
+    height: 170px;
+    display: grid;
+    place-items: center;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 850;
+    letter-spacing: 1.5px;
+}
+
+.photo1 { background: linear-gradient(135deg, #16a99a, #102744); }
+.photo2 { background: linear-gradient(135deg, #163a5c, #087f78); }
+.photo3 { background: linear-gradient(135deg, #087f78, #091b30); }
+
+.project-body {
+    padding: 24px 22px;
+}
+
+.project-tag {
+    display: inline-block;
+    background: #e7f7f5;
+    color: var(--teal-dark);
+    font-size: 10px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+}
+
+.project-body h3 {
+    font-size: 18px;
+    color: var(--navy);
+    margin-bottom: 8px;
+}
+
+.project-body p {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+.project-body small {
+    font-size: 11px;
+    color: #8fa1b3;
+}
+
+.notice {
+    margin-top: 35px;
+    padding: 18px 22px;
+    background: var(--light);
+    border-left: 4px solid var(--teal);
+    border-radius: 6px;
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.notice strong {
+    color: var(--navy);
+}
+
+.center {
+    text-align: center;
+    margin-top: 35px;
+}
+
+
 /* ================= RESPONSIVE DESIGN ================= */
 
 @media (max-width: 1050px) {
@@ -945,7 +1242,8 @@ button {
     }
 
     .benefit-grid,
-    .support-grid {
+    .support-grid,
+    .steps-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -1032,8 +1330,18 @@ button {
         grid-column: 1 / -1;
     }
 
-    .team-container {
+    .team-container,
+    .project-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .guidance-layout {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .page-hero {
+        padding: 80px 0 70px;
     }
 
 }
@@ -1087,8 +1395,19 @@ button {
 
     .benefit-grid,
     .support-grid,
-    .team-container {
+    .team-container,
+    .steps-grid,
+    .project-grid,
+    .funding-options {
         grid-template-columns: 1fr;
+    }
+
+    .page-hero {
+        padding: 65px 0 55px;
+    }
+
+    .cta-card {
+        padding: 28px 23px;
     }
 
     .benefit-card {

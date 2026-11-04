@@ -1,226 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Student Projects | CIP Innovation &amp; Incubation Hub</title>
+    <title>Student Projects | CIP Innovation & Incubation Hub</title>
 
     <link rel="stylesheet" href="styles.css">
-
 </head>
 
 <body>
 
-<header class="site-header">
+<!-- ================= NAVIGATION (same as Home) ================= -->
 
+<header class="site-header">
     <div class="container nav-wrap">
 
-        <a class="brand" href="index.html">
-            <b>CIP</b>
-            <small>INNOVATION &amp; INCUBATION HUB</small>
+        <a href="index.html" class="brand">
+            <span class="brand-mark">CIP</span>
+            <span class="brand-sub">INNOVATION & INCUBATION HUB</span>
         </a>
 
-        <nav aria-label="Main navigation">
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+            ☰
+        </button>
 
+        <nav class="main-nav" id="mainNav">
             <a href="index.html">Home</a>
-            <a href="index.html#canada">Why Build in Canada?</a>
-            <a href="index.html#support">Our Support</a>
-            <a href="projects.html">Student Projects</a>
-            <a class="nav-cta" href="get-started.html">Get Started</a>
-
+            <a href="about.html">About Us</a>
+            <a href="index.html#student-entrepreneurship">Student Entrepreneurship</a>
+            <a href="index.html#our-help">Our Help</a>
+            <a href="get-started.html" class="nav-cta">Submit Your Idea</a>
         </nav>
 
     </div>
-
 </header>
 
 
 <main>
 
-    <!-- PAGE INTRODUCTION -->
+<!-- ================= PAGE INTRODUCTION ================= -->
 
-    <section class="page-hero">
+<section class="page-hero">
+    <div class="container">
 
-        <div class="container">
+        <span class="eyebrow eyebrow-light">STUDENT INNOVATION IN ACTION</span>
 
-            <label class="kicker light">
-                STUDENT INNOVATION IN ACTION
-            </label>
+        <h1>
+            Ideas Taking
+            <span>Shape.</span>
+        </h1>
 
-            <h1>Ideas Taking Shape</h1>
+        <p>
+            Explore projects and initiatives from the CIP student
+            community — student ideas, prototypes and products.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- ================= STUDENT PROJECTS ================= -->
+
+<section class="section section-light">
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">PROJECT SHOWCASE</span>
+
+            <h2>Projects by CIP Students</h2>
 
             <p>
-                Explore projects and initiatives from the CIP student
-                community. This page can showcase student ideas,
-                prototypes and products.
+                Add verified student projects here,
+                with permission from the students involved.
             </p>
 
         </div>
 
-    </section>
 
+        <div class="project-grid">
 
-    <!-- STUDENT PROJECTS -->
+            <article class="project-card">
+                <div class="project-photo photo1">PROJECT PROFILE</div>
+                <div class="project-body">
+                    <span class="project-tag">Replace with category</span>
+                    <h3>Student Project 01</h3>
+                    <p>Add the project name, problem being addressed, proposed solution and current progress.</p>
+                    <small>Project details to be confirmed</small>
+                </div>
+            </article>
 
-    <section class="section">
+            <article class="project-card">
+                <div class="project-photo photo2">PROJECT PROFILE</div>
+                <div class="project-body">
+                    <span class="project-tag">Replace with category</span>
+                    <h3>Student Project 02</h3>
+                    <p>Add a short description of the idea, intended users and progress made so far.</p>
+                    <small>Project details to be confirmed</small>
+                </div>
+            </article>
 
-        <div class="container">
-
-            <div class="heading">
-
-                <label class="kicker">PROJECT SHOWCASE</label>
-
-                <h2>Projects by CIP Students</h2>
-
-                <p>
-                    Add verified student projects here,
-                    with permission from the students involved.
-                </p>
-
-            </div>
-
-
-            <div class="project-grid">
-
-                <article class="project-card">
-
-                    <div class="project-photo photo1">
-                        PROJECT PROFILE
-                    </div>
-
-                    <div class="project-body">
-
-                        <label>Replace with category</label>
-
-                        <h3>Student Project 01</h3>
-
-                        <p>
-                            Add the project name, problem being addressed,
-                            proposed solution and current progress.
-                        </p>
-
-                        <small>Project details to be confirmed</small>
-
-                    </div>
-
-                </article>
-
-
-                <article class="project-card">
-
-                    <div class="project-photo photo2">
-                        PROJECT PROFILE
-                    </div>
-
-                    <div class="project-body">
-
-                        <label>Replace with category</label>
-
-                        <h3>Student Project 02</h3>
-
-                        <p>
-                            Add a short description of the idea,
-                            intended users and progress made so far.
-                        </p>
-
-                        <small>Project details to be confirmed</small>
-
-                    </div>
-
-                </article>
-
-
-                <article class="project-card">
-
-                    <div class="project-photo photo3">
-                        PROJECT PROFILE
-                    </div>
-
-                    <div class="project-body">
-
-                        <label>Replace with category</label>
-
-                        <h3>Student Project 03</h3>
-
-                        <p>
-                            Add the project story, team details
-                            and an image approved by the students.
-                        </p>
-
-                        <small>Project details to be confirmed</small>
-
-                    </div>
-
-                </article>
-
-            </div>
-
-
-            <div class="notice">
-
-                <b>Publishing note:</b>
-
-                These are placeholders, not real project claims.
-                Replace them with verified CIP student project information
-                and obtain permission before publishing names,
-                photos or project details.
-
-            </div>
-
-
-            <p class="center">
-
-                <a class="button" href="get-started.html">
-                    Submit your own idea
-                </a>
-
-            </p>
+            <article class="project-card">
+                <div class="project-photo photo3">PROJECT PROFILE</div>
+                <div class="project-body">
+                    <span class="project-tag">Replace with category</span>
+                    <h3>Student Project 03</h3>
+                    <p>Add the project story, team details and an image approved by the students.</p>
+                    <small>Project details to be confirmed</small>
+                </div>
+            </article>
 
         </div>
 
-    </section>
+
+        <div class="notice">
+            <strong>Publishing note:</strong>
+            These are placeholders, not real project claims.
+            Replace them with verified CIP student project information
+            and obtain permission before publishing names, photos or project details.
+        </div>
+
+
+        <p class="center">
+            <a class="btn btn-primary" href="get-started.html">
+                Submit Your Own Idea →
+            </a>
+        </p>
+
+    </div>
+</section>
 
 </main>
 
 
-<!-- FOOTER -->
+<!-- ================= FOOTER (same as Home) ================= -->
 
-<footer>
+<footer class="site-footer">
 
-    <div class="container footer">
+    <div class="container footer-main">
 
         <div>
-
-            <strong>CIP Innovation &amp; Incubation Hub</strong>
+            <a href="index.html" class="brand brand-footer">
+                <span class="brand-mark">CIP</span>
+                <span class="brand-sub">INNOVATION & INCUBATION HUB</span>
+            </a>
 
             <p>
-                Helping students explore ideas
-                and develop products in Canada.
+                Encouraging student innovation, entrepreneurship
+                and practical project development while studying in Canada.
             </p>
-
         </div>
 
-
-        <div class="footer-links">
-
+        <div class="footer-nav">
+            <strong>Quick Links</strong>
             <a href="index.html">Home</a>
-            <a href="get-started.html">Submit an Idea</a>
-            <a href="mailto:info@cipstudyabroad.com">Contact</a>
+            <a href="about.html">About Us</a>
+            <a href="index.html#student-entrepreneurship">Student Entrepreneurship</a>
+            <a href="index.html#our-help">Our Help</a>
+            <a href="get-started.html">Submit Your Idea</a>
+        </div>
 
+        <div class="footer-nav">
+            <strong>Explore</strong>
+            <a href="projects.html">Student Projects</a>
+            <a href="mailto:info@cipstudyabroad.com">Contact</a>
         </div>
 
     </div>
 
-
-    <div class="copyright">
-        © 2026 CIP Innovation &amp; Incubation Hub. All rights reserved.
+    <div class="container footer-bottom">
+        © 2026 CIP Innovation & Incubation Hub. All rights reserved.
     </div>
 
 </footer>
+
+
+<!-- ================= MOBILE NAVIGATION ================= -->
+
+<script>
+    const menuToggle = document.getElementById("menuToggle");
+    const mainNav = document.getElementById("mainNav");
+
+    menuToggle.addEventListener("click", () => {
+        mainNav.classList.toggle("open");
+        menuToggle.setAttribute("aria-expanded", mainNav.classList.contains("open"));
+    });
+
+    document.querySelectorAll(".main-nav a").forEach((link) => {
+        link.addEventListener("click", () => {
+            mainNav.classList.remove("open");
+            menuToggle.setAttribute("aria-expanded", "false");
+        });
+    });
+</script>
 
 </body>
 </html>

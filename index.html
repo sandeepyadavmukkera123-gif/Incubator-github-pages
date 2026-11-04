@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Turn your ideas into practical projects while studying in Canada with the CIP Innovation & Incubation Hub.">
-  <title>CIP Innovation & Incubation Hub</title>
+  <title>CIP Innovation &amp; Incubation Hub</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -13,21 +13,20 @@
 <header class="site-header">
   <div class="container nav-wrap">
 
-    <a class="brand" href="index.html" aria-label="CIP Innovation and Incubation Hub">
+    <a class="brand" href="index.html" aria-label="CIP Innovation and Incubation Hub home">
       <span class="brand-mark">CIP</span>
       <span class="brand-sub">INNOVATION &amp; INCUBATION HUB</span>
     </a>
 
-    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
-      ☰
-    </button>
+    <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button>
 
     <nav class="main-nav" aria-label="Main navigation">
       <a href="index.html" class="active">Home</a>
       <a href="#canada">Why Build in Canada?</a>
       <a href="about.html">About Us</a>
       <a href="#support">Our Help</a>
-      <a class="nav-cta" href="get-started.html">Your Idea <span>→</span></a>
+      <a href="projects.html">Student Projects</a>
+      <a class="nav-cta" href="get-started.html">Submit your Idea <span aria-hidden="true">→</span></a>
     </nav>
 
   </div>
@@ -41,135 +40,68 @@
 
     <article class="hero-slide active"
       style="--hero-image:url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=2000&q=85')">
-
       <div class="hero-overlay"></div>
-
       <div class="container hero-content">
-        <span class="eyebrow eyebrow-light">
-          THINK GLOBALLY. BUILD BOLDLY.
-        </span>
-
+        <span class="eyebrow eyebrow-light">THINK GLOBALLY. BUILD BOLDLY.</span>
         <h1>
           Build Your Entrepreneurial Dream
           <span>While Studying in Canada.</span>
         </h1>
-
         <p>
           Turn your ideas into practical projects, connect with a community
           of student innovators and explore ways to bring your product to life.
         </p>
-
-        <a class="btn btn-primary" href="get-started.html">
-          Submit your Idea <span>→</span>
-        </a>
+        <a class="btn btn-primary" href="get-started.html">Submit your Idea <span>→</span></a>
       </div>
     </article>
 
-
     <article class="hero-slide"
       style="--hero-image:url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=2000&q=85')">
-
       <div class="hero-overlay"></div>
-
       <div class="container hero-content">
-        <span class="eyebrow eyebrow-light">
-          YOUR GLOBAL EXPERIENCE IS AN ADVANTAGE
-        </span>
-
+        <span class="eyebrow eyebrow-light">YOUR GLOBAL EXPERIENCE IS AN ADVANTAGE</span>
         <h1>
           Bring a Global Perspective
           <span>to Canadian Opportunities.</span>
         </h1>
-
         <p>
           Understand local needs, bring ideas from your own experiences
           and explore solutions for people and communities in Canada.
         </p>
-
-        <a class="btn btn-primary" href="#canada">
-          Explore the opportunity <span>→</span>
-        </a>
+        <a class="btn btn-primary" href="#canada">Explore the opportunity <span>→</span></a>
       </div>
     </article>
 
-
     <article class="hero-slide"
       style="--hero-image:url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=2000&q=85')">
-
       <div class="hero-overlay"></div>
-
       <div class="container hero-content">
-        <span class="eyebrow eyebrow-light">
-          FROM IDEA TO REAL-WORLD PRODUCT
-        </span>
-
+        <span class="eyebrow eyebrow-light">FROM IDEA TO REAL-WORLD PRODUCT</span>
         <h1>
           Make Your Idea
           <span>Something People Can Use.</span>
         </h1>
-
         <p>
           Get guidance, collaborate with others and take practical steps
           towards developing and testing your product.
         </p>
-
-        <a class="btn btn-primary" href="get-started.html">
-          Submit your Idea <span>→</span>
-        </a>
+        <a class="btn btn-primary" href="get-started.html">Submit your Idea <span>→</span></a>
       </div>
     </article>
 
 
-    <!-- SLIDESHOW NAVIGATION -->
+    <!-- SLIDESHOW NAVIGATION: previous / 1 2 3 / next -->
 
     <div class="hero-controls" role="group" aria-label="Slideshow navigation">
-
-      <button class="slide-arrow"
-        id="prevSlide"
-        type="button"
-        aria-label="Previous slide">
-        ‹
-      </button>
-
-      <button class="slide-dot active"
-        type="button"
-        data-slide="0"
-        aria-label="Show slide 1"
-        aria-pressed="true">
-        1
-      </button>
-
-      <button class="slide-dot"
-        type="button"
-        data-slide="1"
-        aria-label="Show slide 2"
-        aria-pressed="false">
-        2
-      </button>
-
-      <button class="slide-dot"
-        type="button"
-        data-slide="2"
-        aria-label="Show slide 3"
-        aria-pressed="false">
-        3
-      </button>
-
-      <button class="slide-arrow"
-        id="nextSlide"
-        type="button"
-        aria-label="Next slide">
-        ›
-      </button>
-
+      <button class="slide-arrow" id="prevSlide" type="button" aria-label="Previous slide">‹</button>
+      <button class="slide-dot active" type="button" data-slide="0" aria-label="Show slide 1" aria-pressed="true">1</button>
+      <button class="slide-dot" type="button" data-slide="1" aria-label="Show slide 2" aria-pressed="false">2</button>
+      <button class="slide-dot" type="button" data-slide="2" aria-label="Show slide 3" aria-pressed="false">3</button>
+      <button class="slide-arrow" id="nextSlide" type="button" aria-label="Next slide">›</button>
     </div>
 
     <div class="hero-bottom">
-      <span>IDEAS</span>
-      <i></i>
-      <span>COLLABORATION</span>
-      <i></i>
-      <span>INNOVATION</span>
+      <span>IDEAS</span><i></i><span>COLLABORATION</span><i></i><span>INNOVATION</span>
     </div>
 
   </section>
@@ -178,92 +110,61 @@
   <!-- 2. WHY BUILD IN CANADA -->
 
   <section class="section section-light" id="canada">
-
     <div class="container">
 
       <div class="section-heading">
-
-        <span class="eyebrow">
-          YOUR NEXT CHAPTER CAN START NOW
-        </span>
-
+        <span class="eyebrow">YOUR NEXT CHAPTER CAN START NOW</span>
         <h2>Why Build While Studying in Canada?</h2>
-
         <p>
           Your international student experience can be more than a qualification.
           It can be a starting point for understanding challenges, creating
           solutions and building a professional portfolio.
         </p>
-
       </div>
-
 
       <div class="benefit-grid">
 
         <article class="benefit-card">
-
-          <div class="benefit-icon icon-blue">⌂</div>
-
+          <div class="benefit-icon icon-blue"><i class="emoji" aria-hidden="true">📈</i></div>
           <span class="card-index">01 / MARKET OPPORTUNITY</span>
-
           <h3>Contribute to Canada's Economy</h3>
-
           <p>
             Understand Canadian markets and industries, identify unmet needs
             and explore how a useful product or service could contribute
             to the local economy.
           </p>
-
         </article>
 
-
         <article class="benefit-card">
-
-          <div class="benefit-icon icon-purple">◎</div>
-
+          <div class="benefit-icon icon-purple"><i class="emoji" aria-hidden="true">🤝</i></div>
           <span class="card-index">02 / REAL-LIFE CHALLENGES</span>
-
           <h3>Address Newcomer Challenges</h3>
-
           <p>
             Use lived experience and community insight to explore practical
             solutions for challenges international students, newcomers
             and immigrant communities may face.
           </p>
-
         </article>
 
-
         <article class="benefit-card">
-
-          <div class="benefit-icon icon-orange">↗</div>
-
+          <div class="benefit-icon icon-orange"><i class="emoji" aria-hidden="true">🛠️</i></div>
           <span class="card-index">03 / PRACTICAL EXPERIENCE</span>
-
           <h3>Build Canadian Project Experience</h3>
-
           <p>
             Work through a real problem, collaborate with others and develop
             a project you can demonstrate through a portfolio or product showcase.
           </p>
-
         </article>
 
-
         <article class="benefit-card">
-
-          <div class="benefit-icon icon-green">✦</div>
-
+          <div class="benefit-icon icon-green"><i class="emoji" aria-hidden="true">🎓</i></div>
           <span class="card-index">04 / CAREER READINESS</span>
-
           <h3>Strengthen Post-Graduation Prospects</h3>
-
           <p>
             Showcase initiative, problem-solving, teamwork and practical skills
             that may strengthen your professional profile when pursuing
             opportunities after graduation.
           </p>
-
         </article>
 
       </div>
@@ -275,98 +176,67 @@
       </p>
 
     </div>
-
   </section>
 
 
   <!-- 3. SUBMIT YOUR IDEA AND FUNDING -->
 
   <section class="section section-tint" id="submit-idea">
-
     <div class="container">
 
       <div class="idea-layout">
 
         <div class="idea-copy">
-
-          <span class="eyebrow">
-            HAVE AN IDEA? LET'S EXPLORE IT.
-          </span>
-
+          <span class="eyebrow">HAVE AN IDEA? LET'S EXPLORE IT.</span>
           <h2>
             Submit Your Idea.<br>
             <span>Get Support to Start.</span>
           </h2>
-
           <p>
             Have a problem you want to solve or a product you want to build?
             Share your idea with the hub. We can help you explore the next steps,
             understand the opportunity and identify suitable development support.
           </p>
-
-          <a class="btn btn-primary" href="get-started.html">
-            Submit your Idea <span>→</span>
-          </a>
-
+          <a class="btn btn-primary" href="get-started.html">Submit your Idea <span>→</span></a>
           <div class="mini-points">
             <span>✓ Your own idea</span>
             <span>✓ Hub-introduced project ideas</span>
             <span>✓ Guidance on next steps</span>
           </div>
-
         </div>
 
 
-        <!-- FINANCIAL ASSISTANCE -->
+        <!-- FINANCIAL ASSISTANCE: the whole card links to the Submit Idea page -->
 
-        <aside class="funding-card">
+        <a class="funding-card" href="get-started.html" aria-label="Potential financial assistance – go to the Submit your Idea page">
 
           <div class="funding-top">
-
-            <span class="eyebrow eyebrow-light">
-              HELP TO GET STARTED
-            </span>
-
+            <span class="eyebrow eyebrow-light">HELP TO GET STARTED</span>
             <h3>Potential Financial Assistance</h3>
-
-            <p>
-              Selected eligible projects may be considered for funding support.
-            </p>
-
+            <p>Selected eligible projects may be considered for funding support.</p>
           </div>
 
-
           <div class="funding-amounts">
-
-            <!-- CLICKABLE FUNDING CARD 1 -->
-
-            <a class="funding-row" href="get-started.html">
-
+            <div class="funding-row">
               <div>
                 <small>OTHER ELIGIBLE STUDENTS</small>
                 <strong>Up to $1,000</strong>
               </div>
-
-              <span class="funding-arrow">↗</span>
-
-            </a>
-
-
-            <!-- CLICKABLE FUNDING CARD 2 -->
-
-            <a class="funding-row" href="get-started.html">
-
+              <span class="funding-arrow" aria-hidden="true">↗</span>
+            </div>
+            <div class="funding-row">
               <div>
                 <small>CIP STUDENTS</small>
                 <strong>Up to $2,500</strong>
               </div>
-
-              <span class="funding-arrow">↗</span>
-
-            </a>
-
+              <span class="funding-arrow" aria-hidden="true">↗</span>
+            </div>
           </div>
 
+          <div class="funding-cta">
+            <span>Submit your Idea to apply</span>
+            <b aria-hidden="true">→</b>
+          </div>
 
           <p class="funding-note">
             Funding is subject to eligibility, project evaluation, selection
@@ -374,7 +244,7 @@
             with the CIP team.
           </p>
 
-        </aside>
+        </a>
 
       </div>
 
@@ -382,137 +252,83 @@
       <!-- PRODUCT DEVELOPMENT CALLOUT -->
 
       <a class="product-callout" href="get-started.html">
-
-        <span class="callout-icon">↗</span>
-
+        <span class="callout-icon"><i class="emoji" aria-hidden="true">🚀</i></span>
         <span class="callout-copy">
-
           <small>FROM CONCEPT TO PRODUCT</small>
-
           <strong>Want to make your product live quickly?</strong>
-
-          <em>
-            Explore a development pathway with guidance from industry experts.
-          </em>
-
+          <em>Explore a development pathway with guidance from industry experts.</em>
         </span>
-
-        <span class="callout-link">
-          Explore product support <b>→</b>
-        </span>
-
+        <span class="callout-link">Explore product support <b>→</b></span>
       </a>
 
     </div>
-
   </section>
 
 
-  <!-- 4. OUR HELP / SUPPORT -->
+  <!-- 4. OUR HELP -->
 
   <section class="section support-section" id="support">
-
     <div class="container">
 
       <div class="section-heading section-heading-dark">
-
-        <span class="eyebrow eyebrow-light">
-          IDEAS NEED THE RIGHT SUPPORT
-        </span>
-
+        <span class="eyebrow eyebrow-light">IDEAS NEED THE RIGHT SUPPORT</span>
         <h2>What We Can Help You With</h2>
-
         <p>
           Whether you are starting with a rough idea or already have a prototype,
           the hub is designed to help you make progress one step at a time.
         </p>
-
       </div>
-
 
       <div class="support-grid">
 
         <article class="support-item">
-
           <span class="support-number">01</span>
-
-          <div class="support-symbol support-blue">◷</div>
-
+          <div class="support-symbol support-blue"><i class="emoji" aria-hidden="true">📅</i></div>
           <h3>Monthly Innovation Meetings</h3>
-
           <p>
             Meet regularly to share ideas, discuss progress, receive feedback
             and plan what comes next.
           </p>
-
         </article>
 
-
         <article class="support-item">
-
           <span class="support-number">02</span>
-
-          <div class="support-symbol support-purple">✳</div>
-
+          <div class="support-symbol support-purple"><i class="emoji" aria-hidden="true">💡</i></div>
           <h3>Project Ideas &amp; Collaboration</h3>
-
           <p>
             Bring your own idea or team up with other students to explore
             project ideas introduced by the hub.
           </p>
-
         </article>
 
-
         <article class="support-item">
-
           <span class="support-number">03</span>
-
-          <div class="support-symbol support-orange">⌁</div>
-
+          <div class="support-symbol support-orange"><i class="emoji" aria-hidden="true">🧭</i></div>
           <h3>Guidance &amp; Mentorship</h3>
-
           <p>
             Get direction to validate your idea, plan development and learn
             from relevant industry experience.
           </p>
-
         </article>
 
-
         <article class="support-item">
-
           <span class="support-number">04</span>
-
-          <div class="support-symbol support-green">＄</div>
-
+          <div class="support-symbol support-green"><i class="emoji" aria-hidden="true">💰</i></div>
           <h3>Financial Assistance</h3>
-
           <p>
             Selected eligible projects may be considered for financial
             assistance, subject to review and approval.
           </p>
-
         </article>
 
       </div>
 
-
       <div class="support-footer">
-
-        <p>
-          <strong>Your idea can start small.</strong>
-          What matters is taking the first step.
-        </p>
-
-        <a class="btn btn-white" href="get-started.html">
-          Submit your Idea <span>→</span>
-        </a>
-
+        <p><strong>Your idea can start small.</strong> What matters is taking the first step.</p>
+        <a class="btn btn-white" href="get-started.html">Submit your Idea <span>→</span></a>
       </div>
 
     </div>
-
   </section>
 
 </main>
@@ -521,193 +337,41 @@
 <!-- FOOTER -->
 
 <footer class="site-footer">
-
   <div class="container footer-main">
 
     <div>
-
       <a class="brand brand-footer" href="index.html">
         <span class="brand-mark">CIP</span>
         <span class="brand-sub">INNOVATION &amp; INCUBATION HUB</span>
       </a>
-
       <p>
         Helping international students explore ideas, develop products
         and build practical experience in Canada.
       </p>
-
     </div>
 
-
     <div class="footer-nav">
-
       <strong>Explore</strong>
-
-      <a href="#canada">Why Build in Canada?</a>
+      <a href="index.html#canada">Why Build in Canada?</a>
       <a href="about.html">About Us</a>
+      <a href="projects.html">Student Projects</a>
       <a href="get-started.html">Submit your Idea</a>
-      <a href="#support">Our Help</a>
-
     </div>
 
-
     <div class="footer-nav">
-
       <strong>Get in touch</strong>
-
-      <a href="mailto:info@cipstudyabroad.com">
-        info@cipstudyabroad.com
-      </a>
-
-      <a href="https://www.cipstudyabroad.com/"
-        target="_blank"
-        rel="noopener">
-        CIP Study Abroad ↗
-      </a>
-
+      <a href="mailto:info@cipstudyabroad.com">info@cipstudyabroad.com</a>
+      <a href="https://www.cipstudyabroad.com/" target="_blank" rel="noopener">CIP Study Abroad ↗</a>
     </div>
 
   </div>
-
 
   <div class="footer-bottom">
-    <div class="container">
-      © 2026 CIP Innovation &amp; Incubation Hub. All rights reserved.
-    </div>
+    <div class="container">© 2026 CIP Innovation &amp; Incubation Hub. All rights reserved.</div>
   </div>
-
 </footer>
 
-
-<!-- JAVASCRIPT -->
-
-<script>
-
-  // SLIDESHOW
-
-  const slides = [...document.querySelectorAll(".hero-slide")];
-
-  const dots = [...document.querySelectorAll(".slide-dot")];
-
-  let activeSlide = 0;
-
-  let rotation;
-
-
-  function showSlide(index) {
-
-    activeSlide = (index + slides.length) % slides.length;
-
-    slides.forEach((slide, i) => {
-      slide.classList.toggle("active", i === activeSlide);
-    });
-
-    dots.forEach((dot, i) => {
-
-      dot.classList.toggle("active", i === activeSlide);
-
-      dot.setAttribute(
-        "aria-pressed",
-        String(i === activeSlide)
-      );
-
-    });
-
-  }
-
-
-  // AUTOMATIC SLIDESHOW
-
-  function startRotation() {
-
-    clearInterval(rotation);
-
-    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-
-      rotation = setInterval(() => {
-
-        showSlide(activeSlide + 1);
-
-      }, 5000);
-
-    }
-
-  }
-
-
-  // NUMBERED NAVIGATION BUTTONS
-
-  dots.forEach(dot => {
-
-    dot.addEventListener("click", () => {
-
-      showSlide(Number(dot.dataset.slide));
-
-      startRotation();
-
-    });
-
-  });
-
-
-  // PREVIOUS BUTTON
-
-  document.getElementById("prevSlide").addEventListener("click", () => {
-
-    showSlide(activeSlide - 1);
-
-    startRotation();
-
-  });
-
-
-  // NEXT BUTTON
-
-  document.getElementById("nextSlide").addEventListener("click", () => {
-
-    showSlide(activeSlide + 1);
-
-    startRotation();
-
-  });
-
-
-  // MOBILE MENU
-
-  const menuToggle = document.querySelector(".menu-toggle");
-
-  const nav = document.querySelector(".main-nav");
-
-
-  menuToggle.addEventListener("click", () => {
-
-    const open = nav.classList.toggle("open");
-
-    menuToggle.setAttribute("aria-expanded", String(open));
-
-  });
-
-
-  nav.querySelectorAll("a").forEach(link => {
-
-    link.addEventListener("click", () => {
-
-      nav.classList.remove("open");
-
-      menuToggle.setAttribute("aria-expanded", "false");
-
-    });
-
-  });
-
-
-  // START
-
-  showSlide(0);
-
-  startRotation();
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>

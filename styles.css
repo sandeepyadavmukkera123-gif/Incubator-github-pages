@@ -96,6 +96,7 @@ button {
 }
 
 .main-nav a {
+    position: relative;
     font-size: 12px;
     font-weight: 700;
     color: var(--navy);
@@ -105,6 +106,24 @@ button {
 .main-nav a:hover,
 .main-nav a.active {
     color: var(--teal-dark);
+}
+
+/* ACTIVE PAGE / SECTION: teal underline under the current menu item */
+.main-nav a:not(.nav-cta)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -8px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--teal);
+    transform: scaleX(0);
+    transition: transform 0.25s;
+}
+
+.main-nav a.active:not(.nav-cta)::after {
+    transform: scaleX(1);
 }
 
 /* FEEDBACK 3: "Submit Your Idea" nav button */
@@ -118,6 +137,13 @@ button {
 .main-nav a.nav-cta:hover {
     background: var(--teal-dark);
     color: #ffffff;
+}
+
+/* When you are ON the Submit Your Idea page */
+.main-nav a.nav-cta.active {
+    background: var(--teal-dark);
+    color: #ffffff;
+    box-shadow: 0 0 0 3px var(--mint);
 }
 
 .menu-toggle {
@@ -166,17 +192,24 @@ button {
 
 /* ================= HERO SLIDESHOW ================= */
 
+/* All slides are stacked in the same grid cell, so the hero grows to fit
+   the tallest slide and text/buttons are never cut off at the bottom. */
 .hero {
-    height: 620px;
-    min-height: 550px;
+    display: grid;
+    min-height: 600px;
     position: relative;
     overflow: hidden;
     background: var(--navy);
 }
 
 .hero-slide {
-    position: absolute;
-    inset: 0;
+    grid-area: 1 / 1;
+    position: relative;
+
+    /* Centre the text vertically */
+    display: flex;
+    align-items: center;
+
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.7s ease;
@@ -205,7 +238,8 @@ button {
 .hero-content {
     position: relative;
     z-index: 2;
-    padding-top: 155px;
+    /* Even space top and bottom; the bottom keeps room for ‹ 1 2 3 › */
+    padding: 70px 0 120px;
     color: #ffffff;
 }
 
@@ -223,8 +257,8 @@ button {
 }
 
 .hero h1 {
-    max-width: 760px;
-    font-size: clamp(42px, 5vw, 62px);
+    max-width: 780px;
+    font-size: clamp(34px, 4.6vw, 58px);
     font-weight: 850;
     line-height: 1.12;
     letter-spacing: -2px;
@@ -1231,6 +1265,466 @@ button {
 
 /* ================= RESPONSIVE DESIGN ================= */
 
+/* ================= HOW IT WORKS: GUIDANCE (text only) ================= */
+
+.guidance-copy-centered {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.guidance-copy-centered .btn {
+    margin-top: 12px;
+}
+
+
+/* ================= SUBMIT IDEA PAGE ================= */
+
+.page-hero-compact {
+    padding: 80px 0 70px;
+}
+
+.page-hero-compact p {
+    margin-bottom: 0;
+}
+
+.form-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 330px;
+    gap: 36px;
+    align-items: start;
+}
+
+.form-card {
+    background: #ffffff;
+    border: 1px solid var(--line);
+    border-radius: 13px;
+    padding: 38px 40px;
+    box-shadow: var(--shadow);
+}
+
+.form-group {
+    min-width: 0;
+    border: none;
+    padding: 0 0 30px;
+    margin: 0 0 30px;
+    border-bottom: 1px solid var(--line);
+}
+
+.form-group legend {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 19px;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 22px;
+}
+
+.form-step {
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--teal);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 900;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.field label,
+.field .label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 7px;
+}
+
+.field em {
+    color: #c9232b;
+    font-style: normal;
+}
+
+.optional {
+    font-weight: 400;
+    color: var(--muted);
+}
+
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="tel"],
+.field input[type="url"],
+.field select,
+.field textarea {
+    width: 100%;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--ink);
+    background: #ffffff;
+    border: 1.5px solid #d5e0e8;
+    border-radius: 7px;
+    padding: 12px 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.field textarea {
+    resize: vertical;
+    min-height: 110px;
+    line-height: 1.6;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+    color: #9aa8b5;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+    outline: none;
+    border-color: var(--teal);
+    box-shadow: 0 0 0 3px rgba(22, 169, 154, 0.15);
+}
+
+.field-hint {
+    align-self: flex-end;
+    font-size: 11px;
+    color: #9aa8b5;
+    margin-top: 5px;
+}
+
+.field-error {
+    display: none;
+    font-size: 12px;
+    color: #c9232b;
+    margin-top: 6px;
+}
+
+.field.has-error .field-error {
+    display: block;
+}
+
+.field.has-error input,
+.field.has-error select,
+.field.has-error textarea {
+    border-color: #c9232b;
+}
+
+.field.has-error .choice span {
+    border-color: #e9a2a5;
+}
+
+/* Pill-style radio buttons and checkboxes */
+
+.choice-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.choice {
+    position: relative;
+    cursor: pointer;
+}
+
+.choice input {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+}
+
+.choice span {
+    display: inline-block;
+    padding: 10px 16px;
+    border: 1.5px solid #d5e0e8;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+    background: #ffffff;
+    transition: 0.2s;
+}
+
+.choice:hover span {
+    border-color: var(--teal);
+}
+
+.choice input:checked + span {
+    background: #e7f7f5;
+    border-color: var(--teal);
+    color: var(--teal-dark);
+}
+
+.choice input:focus-visible + span {
+    box-shadow: 0 0 0 3px rgba(22, 169, 154, 0.3);
+}
+
+.consent-label {
+    display: flex !important;
+    gap: 12px;
+    align-items: flex-start;
+    font-weight: 400 !important;
+    font-size: 13px !important;
+    line-height: 1.6;
+    color: var(--muted) !important;
+    cursor: pointer;
+}
+
+.consent-label input {
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    flex-shrink: 0;
+    accent-color: var(--teal);
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 16px;
+    font-size: 14px;
+    border: none;
+    margin-top: 6px;
+}
+
+.btn-submit:disabled {
+    opacity: 0.7;
+    cursor: wait;
+    transform: none;
+}
+
+.honeypot {
+    position: absolute;
+    left: -9999px;
+}
+
+.form-status {
+    margin-top: 16px;
+    padding: 14px 16px;
+    border-radius: 7px;
+    background: #fdecec;
+    color: #9b1c22;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.form-status a {
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+/* Success message */
+
+.form-success {
+    text-align: center;
+    padding: 30px 10px;
+}
+
+.form-success:focus {
+    outline: none;
+}
+
+.success-icon {
+    font-family: var(--emoji);
+    font-size: 54px;
+    margin-bottom: 16px;
+}
+
+.form-success h2 {
+    color: var(--navy);
+    font-size: 26px;
+    margin-bottom: 12px;
+}
+
+.form-success p {
+    color: var(--muted);
+    font-size: 14px;
+    max-width: 440px;
+    margin: 0 auto 26px;
+}
+
+.success-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.btn-outline {
+    background: #ffffff;
+    border: 1.5px solid var(--teal);
+    color: var(--teal-dark);
+}
+
+.btn-outline:hover {
+    background: #e7f7f5;
+}
+
+/* Sidebar */
+
+.form-sidebar {
+    position: sticky;
+    top: 110px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar-card {
+    background: #ffffff;
+    border: 1px solid var(--line);
+    border-radius: 13px;
+    padding: 26px 24px;
+}
+
+.sidebar-card h3 {
+    font-size: 18px;
+    color: var(--navy);
+    margin-bottom: 18px;
+}
+
+.next-steps {
+    list-style: none;
+    counter-reset: next;
+}
+
+.next-steps li {
+    counter-increment: next;
+    position: relative;
+    padding-left: 44px;
+    margin-bottom: 18px;
+}
+
+.next-steps li:last-child {
+    margin-bottom: 0;
+}
+
+.next-steps li::before {
+    content: counter(next);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #e7f7f5;
+    color: var(--teal-dark);
+    font-size: 13px;
+    font-weight: 900;
+}
+
+.next-steps strong {
+    display: block;
+    font-size: 14px;
+    color: var(--navy);
+}
+
+.next-steps span {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.sidebar-dark {
+    background: linear-gradient(135deg, #163a5c, #102744);
+    border: none;
+    color: #ffffff;
+}
+
+.sidebar-amount {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 13px 16px;
+    margin-bottom: 10px;
+}
+
+.sidebar-amount small {
+    display: block;
+    font-size: 9px;
+    font-weight: 850;
+    letter-spacing: 1px;
+    color: #8290a0;
+}
+
+.sidebar-amount strong {
+    display: block;
+    font-size: 22px;
+    color: var(--teal-dark);
+}
+
+.sidebar-dark p {
+    font-size: 11px;
+    color: #c4d2df;
+    margin-top: 6px;
+    line-height: 1.6;
+}
+
+.sidebar-contact {
+    font-size: 12px;
+    color: var(--muted);
+    text-align: center;
+}
+
+.sidebar-contact a {
+    color: var(--teal-dark);
+    font-weight: 700;
+}
+
+@media (max-width: 950px) {
+
+    .form-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .form-sidebar {
+        position: static;
+    }
+
+}
+
+@media (max-width: 560px) {
+
+    .form-card {
+        padding: 26px 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .page-hero-compact {
+        padding: 55px 0 50px;
+    }
+
+}
+
+
+/* Hide "IDEAS — COLLABORATION — INNOVATION" before it can collide with the slide buttons */
+@media (max-width: 1100px) {
+
+    .hero-bottom {
+        display: none;
+    }
+
+}
+
+
 @media (max-width: 1050px) {
 
     .main-nav {
@@ -1288,6 +1782,17 @@ button {
         font-size: 13px;
     }
 
+    /* Mobile: show the active item with a left bar instead of an underline */
+    .main-nav a:not(.nav-cta)::after {
+        display: none;
+    }
+
+    .main-nav a.active:not(.nav-cta) {
+        padding-left: 12px;
+        border-left: 3px solid var(--teal);
+        background: #e7f7f5;
+    }
+
     .main-nav a.nav-cta {
         margin-top: 14px;
         padding: 13px;
@@ -1296,15 +1801,11 @@ button {
     }
 
     .hero {
-        height: 570px;
+        min-height: 540px;
     }
 
     .hero-content {
-        padding-top: 130px;
-    }
-
-    .hero-bottom {
-        display: none;
+        padding: 55px 0 110px;
     }
 
     .idea-layout {
@@ -1358,15 +1859,15 @@ button {
     }
 
     .hero {
-        height: 590px;
+        min-height: 520px;
     }
 
     .hero-content {
-        padding-top: 115px;
+        padding: 45px 0 100px;
     }
 
     .hero h1 {
-        font-size: 39px;
+        font-size: 33px;
         letter-spacing: -1px;
     }
 

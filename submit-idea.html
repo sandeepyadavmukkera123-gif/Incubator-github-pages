@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Submit your idea to the CIP Innovation & Incubation Hub and get support to start building.">
+
+    <title>Submit Your Idea | CIP Innovation & Incubation Hub</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- ================= NAVIGATION (same as Home) ================= -->
+
+<header class="site-header">
+    <div class="container nav-wrap">
+
+        <a href="index.html" class="brand">
+            <span class="brand-mark">CIP</span>
+            <span class="brand-sub">INNOVATION & INCUBATION HUB</span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+            ☰
+        </button>
+
+        <nav class="main-nav" id="mainNav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="index.html#student-entrepreneurship">Student Entrepreneurship</a>
+            <a href="index.html#our-help">Our Help</a>
+            <a href="submit-idea.html" class="nav-cta active" aria-current="page">Submit Your Idea</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<main>
+
+<!-- ================= PAGE INTRODUCTION ================= -->
+
+<section class="page-hero page-hero-compact">
+    <div class="container">
+
+        <span class="eyebrow eyebrow-light">HAVE AN IDEA? LET'S EXPLORE IT.</span>
+
+        <h1>
+            Submit Your
+            <span>Idea.</span>
+        </h1>
+
+        <p>
+            Tell us about the problem you want to solve and the product
+            you want to build. It only takes a few minutes, and a rough
+            idea is perfectly fine.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- ================= IDEA SUBMISSION FORM ================= -->
+
+<section class="section section-tint">
+    <div class="container form-layout">
+
+        <div class="form-card">
+
+            <!-- Form fields are sent to the email address set in FORM_ENDPOINT (see script below) -->
+            <form id="ideaForm" novalidate>
+
+                <!-- Settings for the email you receive -->
+                <input type="hidden" name="_subject" value="New idea submission - CIP Innovation Hub">
+                <input type="hidden" name="_template" value="table">
+
+                <!-- Spam trap: real people never see or fill this -->
+                <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+
+                <!-- STEP 1: ABOUT YOU -->
+
+                <fieldset class="form-group">
+
+                    <legend><span class="form-step">1</span> About You</legend>
+
+                    <div class="form-row">
+
+                        <div class="field">
+                            <label for="fullName">Full name <em>*</em></label>
+                            <input type="text" id="fullName" name="Full name" autocomplete="name" required>
+                            <span class="field-error">Please enter your name.</span>
+                        </div>
+
+                        <div class="field">
+                            <label for="email">Email <em>*</em></label>
+                            <input type="email" id="email" name="email" autocomplete="email" required>
+                            <span class="field-error">Please enter a valid email address.</span>
+                        </div>
+
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="field">
+                            <label for="phone">Phone <span class="optional">(optional)</span></label>
+                            <input type="tel" id="phone" name="Phone" autocomplete="tel">
+                        </div>
+
+                        <div class="field">
+                            <label for="institution">College / university <em>*</em></label>
+                            <input type="text" id="institution" name="College or university" required>
+                            <span class="field-error">Please enter your college or university.</span>
+                        </div>
+
+                    </div>
+
+                    <div class="field">
+                        <span class="label">Are you a CIP student? <em>*</em></span>
+
+                        <div class="choice-row">
+                            <label class="choice">
+                                <input type="radio" name="CIP student" value="Yes" required>
+                                <span>Yes</span>
+                            </label>
+
+                            <label class="choice">
+                                <input type="radio" name="CIP student" value="No">
+                                <span>No</span>
+                            </label>
+                        </div>
+
+                        <span class="field-error">Please choose one.</span>
+                    </div>
+
+                </fieldset>
+
+
+                <!-- STEP 2: YOUR IDEA -->
+
+                <fieldset class="form-group">
+
+                    <legend><span class="form-step">2</span> Your Idea</legend>
+
+                    <div class="field">
+                        <label for="ideaTitle">Idea name / title <em>*</em></label>
+                        <input type="text" id="ideaTitle" name="Idea title" maxlength="100"
+                               placeholder="e.g. A housing finder for newcomers" required>
+                        <span class="field-error">Please give your idea a short name.</span>
+                    </div>
+
+                    <div class="field">
+                        <label for="problem">What problem are you solving? <em>*</em></label>
+                        <textarea id="problem" name="Problem" rows="4" maxlength="1000"
+                                  placeholder="Describe the problem and who faces it." required></textarea>
+                        <span class="field-hint"><span data-count-for="problem">0</span> / 1000</span>
+                        <span class="field-error">Please describe the problem.</span>
+                    </div>
+
+                    <div class="field">
+                        <label for="solution">What is your solution? <em>*</em></label>
+                        <textarea id="solution" name="Solution" rows="4" maxlength="1000"
+                                  placeholder="How would your product or service solve it?" required></textarea>
+                        <span class="field-hint"><span data-count-for="solution">0</span> / 1000</span>
+                        <span class="field-error">Please describe your solution.</span>
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="field">
+                            <label for="audience">Who is it for? <span class="optional">(optional)</span></label>
+                            <input type="text" id="audience" name="Target users"
+                                   placeholder="e.g. International students in Toronto">
+                        </div>
+
+                        <div class="field">
+                            <label for="stage">Current stage <em>*</em></label>
+                            <select id="stage" name="Stage" required>
+                                <option value="">Select a stage</option>
+                                <option>Just an idea</option>
+                                <option>Researching / validating</option>
+                                <option>Building a prototype</option>
+                                <option>Have early users</option>
+                            </select>
+                            <span class="field-error">Please select a stage.</span>
+                        </div>
+
+                    </div>
+
+                </fieldset>
+
+
+                <!-- STEP 3: TEAM & SUPPORT -->
+
+                <fieldset class="form-group">
+
+                    <legend><span class="form-step">3</span> Team &amp; Support</legend>
+
+                    <div class="field">
+                        <span class="label">Are you working alone or with a team? <em>*</em></span>
+
+                        <div class="choice-row">
+                            <label class="choice">
+                                <input type="radio" name="Team" value="Solo" required>
+                                <span>Solo</span>
+                            </label>
+
+                            <label class="choice">
+                                <input type="radio" name="Team" value="Team of 2-3">
+                                <span>Team of 2–3</span>
+                            </label>
+
+                            <label class="choice">
+                                <input type="radio" name="Team" value="Team of 4+">
+                                <span>Team of 4+</span>
+                            </label>
+
+                            <label class="choice">
+                                <input type="radio" name="Team" value="Looking for teammates">
+                                <span>Looking for teammates</span>
+                            </label>
+                        </div>
+
+                        <span class="field-error">Please choose one.</span>
+                    </div>
+
+                    <div class="field">
+                        <span class="label">What support would help you most? <span class="optional">(choose any)</span></span>
+
+                        <div class="choice-row">
+                            <label class="choice">
+                                <input type="checkbox" name="Support needed" value="Mentorship">
+                                <span>🧭 Mentorship</span>
+                            </label>
+
+                            <label class="choice">
+                                <input type="checkbox" name="Support needed" value="Technical guidance">
+                                <span>🛠️ Technical guidance</span>
+                            </label>
+
+                            <label class="choice">
+                                <input type="checkbox" name="Support needed" value="Business planning">
+                                <span>📊 Business planning</span>
+                            </label>
+
+                            <label class="choice">
+                                <input type="checkbox" name="Support needed" value="Financial assistance">
+                                <span>💰 Financial assistance</span>
+                            </label>
+
+                            <label class="choice">
+                                <input type="checkbox" name="Support needed" value="Finding teammates">
+                                <span>🤝 Finding teammates</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="link">Link to anything you have <span class="optional">(optional)</span></label>
+                        <input type="url" id="link" name="Link" placeholder="https:// - pitch deck, prototype, website, etc.">
+                        <span class="field-error">Please enter a full link starting with https://</span>
+                    </div>
+
+                </fieldset>
+
+
+                <!-- CONSENT + SUBMIT -->
+
+                <div class="field consent">
+                    <label class="consent-label">
+                        <input type="checkbox" id="consent" name="Consent" value="Yes" required>
+                        <span>
+                            I agree that the CIP team may contact me about this idea.
+                            I understand submitting an idea does not guarantee
+                            selection, funding or any immigration outcome.
+                        </span>
+                    </label>
+                    <span class="field-error">Please tick this box to continue.</span>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-submit" id="submitBtn">
+                    Submit My Idea →
+                </button>
+
+                <p class="form-status" id="formStatus" role="alert" hidden></p>
+
+            </form>
+
+
+            <!-- Shown after a successful submission -->
+
+            <div class="form-success" id="formSuccess" hidden tabindex="-1">
+
+                <div class="success-icon">🎉</div>
+
+                <h2>Thank you! Your idea has been submitted.</h2>
+
+                <p>
+                    The CIP team will review your idea and
+                    get in touch using the email you provided.
+                </p>
+
+                <div class="success-actions">
+                    <a href="index.html" class="btn btn-primary">Back to Home</a>
+                    <button type="button" class="btn btn-outline" id="submitAnother">Submit another idea</button>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <aside class="form-sidebar">
+
+            <div class="sidebar-card">
+
+                <h3>What happens next?</h3>
+
+                <ol class="next-steps">
+                    <li>
+                        <strong>We review your idea</strong>
+                        <span>The CIP team reads every submission.</span>
+                    </li>
+                    <li>
+                        <strong>We get in touch</strong>
+                        <span>We contact you to talk through the idea and next steps.</span>
+                    </li>
+                    <li>
+                        <strong>You start building</strong>
+                        <span>With guidance, mentorship and possible funding support.</span>
+                    </li>
+                </ol>
+
+            </div>
+
+
+            <div class="sidebar-card sidebar-dark">
+
+                <span class="eyebrow eyebrow-light">POTENTIAL FUNDING</span>
+
+                <div class="sidebar-amount">
+                    <small>CIP STUDENTS</small>
+                    <strong>Up to $2,500</strong>
+                </div>
+
+                <div class="sidebar-amount">
+                    <small>OTHER ELIGIBLE STUDENTS</small>
+                    <strong>Up to $1,000</strong>
+                </div>
+
+                <p>
+                    Subject to eligibility, evaluation and approval.
+                    Funding is not guaranteed.
+                </p>
+
+            </div>
+
+
+            <p class="sidebar-contact">
+                Questions? Email
+                <a href="mailto:info@cipstudyabroad.com">info@cipstudyabroad.com</a>
+            </p>
+
+        </aside>
+
+    </div>
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER (same as Home) ================= -->
+
+<footer class="site-footer">
+
+    <div class="container footer-main">
+
+        <div>
+            <a href="index.html" class="brand brand-footer">
+                <span class="brand-mark">CIP</span>
+                <span class="brand-sub">INNOVATION & INCUBATION HUB</span>
+            </a>
+
+            <p>
+                Encouraging student innovation, entrepreneurship
+                and practical project development while studying in Canada.
+            </p>
+        </div>
+
+        <div class="footer-nav">
+            <strong>Quick Links</strong>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="index.html#student-entrepreneurship">Student Entrepreneurship</a>
+            <a href="index.html#our-help">Our Help</a>
+            <a href="submit-idea.html">Submit Your Idea</a>
+        </div>
+
+        <div class="footer-nav">
+            <strong>Explore</strong>
+            <a href="get-started.html">How It Works</a>
+            <a href="projects.html">Student Projects</a>
+            <a href="mailto:info@cipstudyabroad.com">Contact</a>
+        </div>
+
+    </div>
+
+    <div class="container footer-bottom">
+        © 2026 CIP Innovation & Incubation Hub. All rights reserved.
+    </div>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+    // ---------------------------------------------------------------
+    // WHERE SUBMISSIONS ARE SENT
+    // Submissions are emailed to this address through FormSubmit.co
+    // (free, no account needed). Change the email here if needed.
+    // The very first submission sends an activation email to this
+    // address - open it and click "Activate Form" once.
+    // ---------------------------------------------------------------
+    const RECEIVING_EMAIL = "info@cipstudyabroad.com";
+    const FORM_ENDPOINT = "https://formsubmit.co/ajax/" + RECEIVING_EMAIL;
+
+
+    const form = document.getElementById("ideaForm");
+    const submitBtn = document.getElementById("submitBtn");
+    const formStatus = document.getElementById("formStatus");
+    const formSuccess = document.getElementById("formSuccess");
+
+
+    // CHARACTER COUNTERS
+
+    document.querySelectorAll("[data-count-for]").forEach((counter) => {
+        const box = document.getElementById(counter.dataset.countFor);
+        box.addEventListener("input", () => {
+            counter.textContent = box.value.length;
+        });
+    });
+
+
+    // VALIDATION
+
+    function fieldWrapper(input) {
+        return input.closest(".field");
+    }
+
+    function checkField(input) {
+        const wrapper = fieldWrapper(input);
+        if (!wrapper) return true;
+
+        let valid;
+
+        if (input.type === "radio") {
+            valid = !!form.querySelector(`input[name="${input.name}"]:checked`);
+        } else if (input.type === "checkbox") {
+            valid = !input.required || input.checked;
+        } else {
+            input.value = input.value.trimStart();
+            valid = input.checkValidity() && (!input.required || input.value.trim() !== "");
+        }
+
+        wrapper.classList.toggle("has-error", !valid);
+        return valid;
+    }
+
+    // Re-check a field as soon as the person fixes it
+    form.querySelectorAll("input, textarea, select").forEach((input) => {
+        const event = (input.type === "radio" || input.type === "checkbox" || input.tagName === "SELECT")
+            ? "change" : "blur";
+
+        input.addEventListener(event, () => {
+            if (fieldWrapper(input)?.classList.contains("has-error") || event === "change") {
+                checkField(input);
+            }
+        });
+
+        input.addEventListener("input", () => {
+            if (fieldWrapper(input)?.classList.contains("has-error")) {
+                checkField(input);
+            }
+        });
+    });
+
+
+    // SUBMIT
+
+    form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        formStatus.hidden = true;
+
+        // Check every required field (and any filled-in email/link field)
+        const inputs = form.querySelectorAll("input[required], textarea[required], select[required], input[type=url], input[type=email]");
+        let firstInvalid = null;
+
+        inputs.forEach((input) => {
+            if (!checkField(input) && !firstInvalid) {
+                firstInvalid = input;
+            }
+        });
+
+        if (firstInvalid) {
+            firstInvalid.focus();
+            fieldWrapper(firstInvalid).scrollIntoView({ behavior: "smooth", block: "center" });
+            return;
+        }
+
+        // Spam trap filled = silently stop
+        if (form._honey.value) return;
+
+        // Collect answers (several ticked boxes are joined into one line)
+        const data = {};
+        new FormData(form).forEach((value, key) => {
+            data[key] = data[key] ? data[key] + ", " + value : value;
+        });
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Submitting…";
+
+        try {
+            const response = await fetch(FORM_ENDPOINT, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json().catch(() => ({}));
+
+            if (!response.ok || result.success === "false" || result.success === false) {
+                throw new Error(result.message || "Submission failed");
+            }
+
+            form.reset();
+            document.querySelectorAll("[data-count-for]").forEach((c) => c.textContent = "0");
+            form.hidden = true;
+            formSuccess.hidden = false;
+            formSuccess.focus();
+            formSuccess.scrollIntoView({ behavior: "smooth", block: "center" });
+
+        } catch (error) {
+            formStatus.hidden = false;
+            formStatus.innerHTML =
+                "Sorry, your idea could not be sent right now. Please try again in a moment, " +
+                'or email it to <a href="mailto:' + RECEIVING_EMAIL + '">' + RECEIVING_EMAIL + "</a>.";
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Submit My Idea →";
+        }
+    });
+
+
+    // SUBMIT ANOTHER
+
+    document.getElementById("submitAnother").addEventListener("click", () => {
+        formSuccess.hidden = true;
+        form.hidden = false;
+        form.querySelector("input:not([type=hidden]):not(.honeypot)").focus();
+    });
+
+
+    // MOBILE NAVIGATION
+
+    const menuToggle = document.getElementById("menuToggle");
+    const mainNav = document.getElementById("mainNav");
+
+    menuToggle.addEventListener("click", () => {
+        mainNav.classList.toggle("open");
+        menuToggle.setAttribute("aria-expanded", mainNav.classList.contains("open"));
+    });
+
+    document.querySelectorAll(".main-nav a").forEach((link) => {
+        link.addEventListener("click", () => {
+            mainNav.classList.remove("open");
+            menuToggle.setAttribute("aria-expanded", "false");
+        });
+    });
+
+</script>
+
+</body>
+</html>

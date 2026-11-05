@@ -33,7 +33,7 @@
             <a href="#student-entrepreneurship">Student Entrepreneurship</a>
             <a href="#our-help">Our Help</a>
             <!-- FEEDBACK 3: "Your Idea" is now a "Submit Your Idea" button -->
-            <a href="get-started.html" class="nav-cta">Submit Your Idea</a>
+            <a href="submit-idea.html" class="nav-cta">Submit Your Idea</a>
         </nav>
 
     </div>
@@ -68,7 +68,7 @@
                 Explore ideas, solve real-world challenges and build something meaningful.
             </p>
 
-            <a href="get-started.html" class="btn btn-primary">
+            <a href="submit-idea.html" class="btn btn-primary">
                 Submit Your Idea →
             </a>
 
@@ -210,18 +210,38 @@
 
             <article class="benefit-card">
 
-                <div class="benefit-icon">🍁</div>
+                <div class="benefit-icon">🎓</div>
 
                 <span class="card-index">
-                    01 / MARKET OPPORTUNITY
+                    01 / CAREER READINESS
                 </span>
 
-                <h3>Contribute to Canada's Economy</h3>
+                <h3>Strengthen Post-Graduation Prospects</h3>
 
                 <p>
-                    Understand Canadian markets and industries,
-                    identify unmet needs and explore how a useful
-                    product or service could contribute to the local economy.
+                    Show initiative, problem-solving, teamwork and leadership,
+                    the qualities that stand out to employers, investors
+                    and partners after you graduate.
+                </p>
+
+            </article>
+
+
+            <article class="benefit-card">
+
+                <div class="benefit-icon">🌱</div>
+
+                <span class="card-index">
+                    02 / START LEAN, THINK BIG
+                </span>
+
+                <h3>Broke Is a Business Plan.</h3>
+
+                <p>
+                    Most great companies started with more ideas than money.
+                    As a student your costs are low, your schedule is flexible
+                    and a failed idea costs you little. Use this stage to test,
+                    learn and build something that could outgrow the classroom.
                 </p>
 
             </article>
@@ -232,15 +252,17 @@
                 <div class="benefit-icon">🤝</div>
 
                 <span class="card-index">
-                    02 / REAL-LIFE CHALLENGES
+                    03 / REAL PROBLEMS, REAL EXPERIENCE
                 </span>
 
-                <h3>Address Newcomer Challenges</h3>
+                <h3>Solve What You've Lived</h3>
 
                 <p>
-                    Explore practical solutions for challenges
-                    international students, newcomers and immigrant
-                    communities may face.
+                    You know newcomer challenges firsthand, like housing,
+                    banking, jobs and settling in. Turn that insight into a
+                    real project, working with peers and mentors, and build
+                    Canadian experience you can show in a portfolio or
+                    product showcase.
                 </p>
 
             </article>
@@ -248,37 +270,18 @@
 
             <article class="benefit-card">
 
-                <div class="benefit-icon">🛠️</div>
+                <div class="benefit-icon">🍁</div>
 
                 <span class="card-index">
-                    03 / PRACTICAL EXPERIENCE
+                    04 / MARKET OPPORTUNITY
                 </span>
 
-                <h3>Build Canadian Project Experience</h3>
+                <h3>Contribute to Canada's Economy</h3>
 
                 <p>
-                    Work through real problems, collaborate with others
-                    and develop projects you can demonstrate through
-                    a portfolio or product showcase.
-                </p>
-
-            </article>
-
-
-            <article class="benefit-card">
-
-                <div class="benefit-icon">🎓</div>
-
-                <span class="card-index">
-                    04 / CAREER READINESS
-                </span>
-
-                <h3>Strengthen Post-Graduation Prospects</h3>
-
-                <p>
-                    Showcase initiative, problem-solving, teamwork
-                    and practical skills that may strengthen your
-                    professional profile after graduation.
+                    Understand Canadian markets, spot unmet needs and create
+                    products or services that add value to local communities
+                    and the wider economy.
                 </p>
 
             </article>
@@ -435,7 +438,7 @@
                     suitable development support.
                 </p>
 
-                <a href="get-started.html" class="btn btn-primary">
+                <a href="submit-idea.html" class="btn btn-primary">
                     Submit Your Idea →
                 </a>
 
@@ -454,7 +457,7 @@
 
             <!-- FEEDBACK 5: whole funding card is now a link to the Submit Idea page -->
 
-            <a href="get-started.html" class="funding-card"
+            <a href="submit-idea.html" class="funding-card"
                aria-label="Potential financial assistance - submit your idea">
 
                 <div class="funding-top">
@@ -588,7 +591,7 @@
 
             <a href="#our-help">Our Help</a>
 
-            <a href="get-started.html">Submit Your Idea</a>
+            <a href="submit-idea.html">Submit Your Idea</a>
 
         </div>
 
@@ -597,7 +600,7 @@
 
             <strong>Explore</strong>
 
-            <a href="get-started.html">Get Started</a>
+            <a href="get-started.html">How It Works</a>
 
             <a href="projects.html">Student Projects</a>
 
@@ -682,6 +685,48 @@
             menuToggle.setAttribute("aria-expanded", "false");
         });
     });
+
+
+    // HIGHLIGHT THE MENU ITEM FOR THE SECTION YOU ARE LOOKING AT
+    // Top of page = Home, then Student Entrepreneurship, then Our Help.
+
+    const navItems = {
+        "top": document.querySelector('.main-nav a[href="index.html"]'),
+        "student-entrepreneurship": document.querySelector('.main-nav a[href="#student-entrepreneurship"]'),
+        "our-help": document.querySelector('.main-nav a[href="#our-help"]')
+    };
+
+    const trackedSections = ["student-entrepreneurship", "our-help"]
+        .map((id) => document.getElementById(id));
+
+    function updateActiveNav() {
+        const headerHeight = document.querySelector(".site-header").offsetHeight;
+        const scrollLine = window.scrollY + headerHeight + 120;
+
+        let current = "top";
+
+        trackedSections.forEach((section) => {
+            if (section.offsetTop <= scrollLine) {
+                current = section.id;
+            }
+        });
+
+        Object.entries(navItems).forEach(([key, link]) => {
+            const isCurrent = key === current;
+            link.classList.toggle("active", isCurrent);
+
+            if (isCurrent) {
+                link.setAttribute("aria-current", key === "top" ? "page" : "location");
+            } else {
+                link.removeAttribute("aria-current");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", updateActiveNav, { passive: true });
+    window.addEventListener("resize", updateActiveNav);
+    window.addEventListener("hashchange", updateActiveNav);
+    updateActiveNav();
 
 
     // Pause automatic slideshow when the user hovers over it

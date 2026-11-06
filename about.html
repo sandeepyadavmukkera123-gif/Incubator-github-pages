@@ -450,4 +450,584 @@
 </script>
 
 </body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Meet the people behind the CIP Innovation & Incubation Hub.">
+
+    <title>About Us | CIP Innovation & Incubation Hub</title>
+
+    <!-- Shared site styles: menu, buttons, footer (same as every other page) -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Styles used only on the About Us page -->
+    <style>
+
+        /* ================= PAGE INTRO ================= */
+
+        .team-intro {
+            position: relative;
+            overflow: hidden;
+            padding: 90px 0 60px;
+            background: #ffffff;
+        }
+
+        /* Decorative rings on the right, like the reference design */
+        .team-intro::after {
+            content: "";
+            position: absolute;
+            right: -120px;
+            top: 40px;
+            width: 340px;
+            height: 340px;
+            border-radius: 50%;
+            border: 1.5px solid #dcebea;
+            box-shadow:
+                0 0 0 30px #ffffff,
+                0 0 0 31.5px #dcebea,
+                0 0 0 60px #ffffff,
+                0 0 0 61.5px #e8f2f1;
+            pointer-events: none;
+        }
+
+        .team-intro .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .team-intro h1 {
+            max-width: 720px;
+            font-size: clamp(34px, 4.6vw, 54px);
+            line-height: 1.15;
+            letter-spacing: -1.5px;
+            color: var(--navy);
+            margin-bottom: 22px;
+        }
+
+        /* Italic highlighted words in the heading */
+        .team-intro h1 em {
+            font-family: Georgia, "Times New Roman", serif;
+            font-weight: 400;
+            font-style: italic;
+            letter-spacing: -0.5px;
+            color: var(--teal-dark);
+        }
+
+        .team-intro p {
+            max-width: 620px;
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--muted);
+        }
+
+
+        /* ================= TEAM GRID ================= */
+
+        .team-section {
+            padding: 30px 0 90px;
+            background: #ffffff;
+        }
+
+        .member-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 36px;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .member-card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Square photo with a soft teal background */
+        .member-photo {
+            position: relative;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #e7f7f5, #dfe8ef);
+            margin-bottom: 22px;
+        }
+
+        .member-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .member-card:hover .member-photo img {
+            transform: scale(1.04);
+        }
+
+        /* Shows initials if a photo is missing */
+        .member-photo .initials {
+            position: absolute;
+            inset: 0;
+            display: none;
+            place-items: center;
+            font-size: 64px;
+            font-weight: 900;
+            color: var(--teal-dark);
+        }
+
+        .member-photo.no-photo .initials {
+            display: grid;
+        }
+
+        .member-card h2 {
+            font-size: 24px;
+            color: var(--navy);
+            letter-spacing: -0.5px;
+            margin-bottom: 4px;
+        }
+
+        .member-role {
+            font-family: Georgia, "Times New Roman", serif;
+            font-style: italic;
+            font-size: 16px;
+            color: var(--teal-dark);
+            margin-bottom: 14px;
+        }
+
+        .member-bio {
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--muted);
+            margin-bottom: 16px;
+        }
+
+        /* Small credential tags */
+        .member-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .member-tags span {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--navy);
+            background: var(--light);
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 5px 11px;
+        }
+
+        /* LinkedIn button */
+        .linkedin-link {
+            margin-top: auto;
+            align-self: flex-start;
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 10px 16px;
+            border: 1.5px solid #d5e0e8;
+            border-radius: 7px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--navy);
+            transition: 0.2s;
+        }
+
+        .linkedin-link svg {
+            width: 18px;
+            height: 18px;
+            fill: #0a66c2;
+            transition: fill 0.2s;
+        }
+
+        .linkedin-link:hover {
+            background: #0a66c2;
+            border-color: #0a66c2;
+            color: #ffffff;
+        }
+
+        .linkedin-link:hover svg {
+            fill: #ffffff;
+        }
+
+        .linkedin-link:focus-visible {
+            outline: 3px solid var(--teal);
+            outline-offset: 3px;
+        }
+
+
+        /* ================= FOUNDER MESSAGE ================= */
+
+        .founder-message {
+            background: var(--light);
+            padding: 80px 0;
+        }
+
+        .founder-quote {
+            max-width: 820px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .founder-quote blockquote {
+            font-family: Georgia, "Times New Roman", serif;
+            font-style: italic;
+            font-size: clamp(19px, 2.3vw, 24px);
+            line-height: 1.6;
+            color: var(--navy);
+            margin: 6px 0 26px;
+        }
+
+        .founder-quote blockquote::before {
+            content: "\201C";
+            display: block;
+            font-size: 70px;
+            line-height: 0.6;
+            color: var(--teal);
+            margin-bottom: 14px;
+        }
+
+        .quote-person {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            text-align: left;
+        }
+
+        .quote-person img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .quote-person strong {
+            display: block;
+            font-size: 14px;
+            color: var(--navy);
+        }
+
+        .quote-person span {
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+
+        /* ================= CALL TO ACTION ================= */
+
+        .about-cta {
+            background: var(--navy);
+            color: #ffffff;
+            padding: 60px 0;
+        }
+
+        .about-cta .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .about-cta h2 {
+            font-size: clamp(24px, 3vw, 32px);
+            letter-spacing: -0.5px;
+            margin-bottom: 6px;
+        }
+
+        .about-cta p {
+            color: #c5d2df;
+            font-size: 14px;
+        }
+
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 800px) {
+
+            .team-intro {
+                padding: 60px 0 40px;
+            }
+
+            .team-intro::after {
+                display: none;
+            }
+
+            .about-cta .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .member-grid {
+                grid-template-columns: 1fr;
+                max-width: 420px;
+                margin: 0 auto;
+                gap: 50px;
+            }
+
+            .team-section {
+                padding-bottom: 65px;
+            }
+
+            .founder-message {
+                padding: 60px 0;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- ================= NAVIGATION (same as every page) ================= -->
+
+<header class="site-header">
+    <div class="container nav-wrap">
+
+        <a href="index.html" class="brand">
+            <span class="brand-mark">CIP</span>
+            <span class="brand-sub">INNOVATION & INCUBATION HUB</span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+            ☰
+        </button>
+
+        <nav class="main-nav" id="mainNav">
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active" aria-current="page">About Us</a>
+            <a href="index.html#student-entrepreneurship">Student Entrepreneurship</a>
+            <a href="index.html#our-help">Our Help</a>
+            <a href="submit-idea.html" class="nav-cta">Submit Your Idea</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<main>
+
+<!-- ================= PAGE INTRO ================= -->
+
+<section class="team-intro">
+    <div class="container">
+
+        <span class="eyebrow">ABOUT CIP INNOVATION HUB</span>
+
+        <h1>
+            Meet the people helping students
+            turn <em>ideas</em> into <em>real products</em>
+        </h1>
+
+        <p>
+            We believe students have the creativity to build meaningful
+            solutions. Our team supports student innovation and
+            entrepreneurship, and helps turn ideas into opportunities.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- ================= TEAM ================= -->
+
+<section class="team-section">
+    <div class="container">
+
+        <div class="member-grid">
+
+            <!-- PROFILE 1: DR. GAUTHAM KOLLURI -->
+
+            <article class="member-card">
+
+                <div class="member-photo">
+                    <img src="images/dr-gautham.jpg"
+                         alt="Dr. Gautham Kolluri"
+                         onerror="this.parentElement.classList.add('no-photo'); this.remove();">
+                    <span class="initials" aria-hidden="true">GK</span>
+                </div>
+
+                <h2>Dr. Gautham Kolluri</h2>
+
+                <p class="member-role">Founder · RCIC #R535191</p>
+
+                <p class="member-bio">
+                    A Regulated Canadian Immigration Consultant and founder of
+                    Canada's first virtual immigration platform. He believes
+                    technology can make expert support available to everyone,
+                    wherever they are.
+                </p>
+
+                <div class="member-tags">
+                    <span>RCIC</span>
+                    <span>Professional Diploma in Immigration</span>
+                    <span>Founder</span>
+                </div>
+
+                <a class="linkedin-link"
+                   href="https://www.linkedin.com/in/gauthamkolluri/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Dr. Gautham Kolluri on LinkedIn (opens in a new tab)">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+                    View LinkedIn
+                </a>
+
+            </article>
+
+
+            <!-- PROFILE 2: RAVI -->
+            <!-- TODO: replace the role and bio below with Ravi's real title and 2-3 line bio -->
+
+            <article class="member-card">
+
+                <div class="member-photo">
+                    <img src="images/ravi.jpg"
+                         alt="Ravi"
+                         onerror="this.parentElement.classList.add('no-photo'); this.remove();">
+                    <span class="initials" aria-hidden="true">R</span>
+                </div>
+
+                <h2>Ravi</h2>
+
+                <p class="member-role">Team Member</p>
+
+                <p class="member-bio">
+                    Part of the team supporting innovation and entrepreneurship
+                    at the CIP Innovation &amp; Incubation Hub. Connect on
+                    LinkedIn to learn more about his background and experience.
+                </p>
+
+                <a class="linkedin-link"
+                   href="https://www.linkedin.com/in/ravicm/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Ravi on LinkedIn (opens in a new tab)">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+                    View LinkedIn
+                </a>
+
+            </article>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================= FOUNDER MESSAGE ================= -->
+
+<section class="founder-message">
+    <div class="container founder-quote">
+
+        <span class="eyebrow">A MESSAGE FROM OUR FOUNDER</span>
+
+        <blockquote>
+            I founded Canada's first true virtual immigration platform because
+            I believe everyone deserves access to expert services, regardless
+            of where they are or what time it is. Technology lets us serve
+            people 24/7 with the same quality and care as traditional services.
+        </blockquote>
+
+        <div class="quote-person">
+            <img src="images/dr-gautham.jpg" alt="" onerror="this.remove();">
+            <div>
+                <strong>Dr. Gautham Kolluri</strong>
+                <span>Founder · RCIC</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================= CALL TO ACTION ================= -->
+
+<section class="about-cta">
+    <div class="container">
+
+        <div>
+            <h2>Have an idea? We'd love to hear it.</h2>
+            <p>Share it with our team and get support to start building.</p>
+        </div>
+
+        <a href="submit-idea.html" class="btn btn-primary">Submit Your Idea →</a>
+
+    </div>
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER (same as every page) ================= -->
+
+<footer class="site-footer">
+
+    <div class="container footer-main">
+
+        <div>
+            <a href="index.html" class="brand brand-footer">
+                <span class="brand-mark">CIP</span>
+                <span class="brand-sub">INNOVATION & INCUBATION HUB</span>
+            </a>
+
+            <p>
+                Encouraging student innovation, entrepreneurship
+                and practical project development while studying in Canada.
+            </p>
+        </div>
+
+        <div class="footer-nav">
+            <strong>Quick Links</strong>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="index.html#student-entrepreneurship">Student Entrepreneurship</a>
+            <a href="index.html#our-help">Our Help</a>
+            <a href="submit-idea.html">Submit Your Idea</a>
+        </div>
+
+        <div class="footer-nav">
+            <strong>Explore</strong>
+            <a href="get-started.html">How It Works</a>
+            <a href="projects.html">Student Projects</a>
+            <a href="mailto:info@cipstudyabroad.com">Contact</a>
+        </div>
+
+    </div>
+
+    <div class="container footer-bottom">
+        © 2026 CIP Innovation & Incubation Hub. All rights reserved.
+    </div>
+
+</footer>
+
+
+<!-- ================= MOBILE NAVIGATION ================= -->
+
+<script>
+    const menuToggle = document.getElementById("menuToggle");
+    const mainNav = document.getElementById("mainNav");
+
+    menuToggle.addEventListener("click", () => {
+        mainNav.classList.toggle("open");
+        menuToggle.setAttribute("aria-expanded", mainNav.classList.contains("open"));
+    });
+
+    document.querySelectorAll(".main-nav a").forEach((link) => {
+        link.addEventListener("click", () => {
+            mainNav.classList.remove("open");
+            menuToggle.setAttribute("aria-expanded", "false");
+        });
+    });
+</script>
+
+</body>
 </html>

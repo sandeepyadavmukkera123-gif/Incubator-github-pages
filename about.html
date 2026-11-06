@@ -200,10 +200,9 @@
             display: flex;
             flex-direction: column;
             transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
         }
 
-        .profile-link:hover .profile-card {
+        .profile-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
         }
@@ -303,6 +302,56 @@
             color: #ff7777;
             font-weight: bold;
             margin-right: 10px;
+        }
+
+
+        /* =========================
+           LINKEDIN BUTTON
+        ========================= */
+
+        .linkedin-btn {
+            margin-top: auto;
+            align-self: center;
+
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+
+            padding: 12px 22px;
+            border-radius: 8px;
+
+            background: #0a66c2;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: bold;
+
+            box-shadow: 0 6px 16px rgba(10, 102, 194, 0.35);
+            transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+        }
+
+        .linkedin-btn svg {
+            width: 22px;
+            height: 22px;
+            fill: #ffffff;
+            flex-shrink: 0;
+        }
+
+        .linkedin-btn:hover {
+            background: #004182;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 22px rgba(10, 102, 194, 0.45);
+        }
+
+        .linkedin-btn:focus-visible {
+            outline: 3px solid #ffffff;
+            outline-offset: 3px;
+        }
+
+        /* Keep space between the content and the button */
+        .profile-card > .credentials,
+        .profile-card > .profile-content {
+            margin-bottom: 28px;
         }
 
 
@@ -499,12 +548,7 @@
             <!-- FIRST PROFILE: DR. GAUTHAM KOLLURI -->
             <!-- FEEDBACK 4: "FOUNDER & INNOVATOR" tag removed -->
 
-            <a
-                href="https://www.linkedin.com/in/gauthamkolluri/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="profile-link"
-                aria-label="Open Dr. Gautham Kolluri's LinkedIn profile">
+            <div class="profile-link">
 
                 <div class="profile-card">
 
@@ -561,20 +605,25 @@
 
                     </div>
 
+                    <!-- LinkedIn button -->
+                    <a class="linkedin-btn"
+                       href="https://www.linkedin.com/in/gauthamkolluri/"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Dr. Gautham Kolluri on LinkedIn (opens in a new tab)">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+                        <span>Connect on LinkedIn</span>
+                    </a>
+
                 </div>
 
-            </a>
+            </div>
 
 
             <!-- SECOND PROFILE: RAVI -->
             <!-- FEEDBACK 4: "OUR TEAM" tag removed -->
 
-            <a
-                href="https://www.linkedin.com/in/ravicm/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="profile-link"
-                aria-label="Open Ravi's LinkedIn profile">
+            <div class="profile-link">
 
                 <div class="profile-card">
 
@@ -600,9 +649,19 @@
 
                     </div>
 
+                    <!-- LinkedIn button -->
+                    <a class="linkedin-btn"
+                       href="https://www.linkedin.com/in/ravicm/"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Ravi on LinkedIn (opens in a new tab)">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+                        <span>Connect on LinkedIn</span>
+                    </a>
+
                 </div>
 
-            </a>
+            </div>
 
 
         </div>
